@@ -35,7 +35,7 @@ export default function Button({
   isActive = false,
   disabled = false,
   onClick,
-}: ButtonPropsT): ReactElement {
+}: Partial<ButtonPropsT>): ReactElement {
   return (
     <BasedButton
       type={type}

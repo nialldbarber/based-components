@@ -1,11 +1,11 @@
 import React from 'react';
-import {Input} from 'based-components';
-import 'based-components/dist/index.css';
+import {Input, Button} from 'based-components';
 
 const App = () => {
   return (
     <>
       <Input text="hello" />
+      <Button text="hi hi" />
     </>
   );
 };

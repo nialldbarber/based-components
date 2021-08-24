@@ -1,31 +1,29 @@
-import React, {ReactElement} from 'react';
-import styled from 'styled-components';
-import {Shape, ButtonPropsT} from './types';
+import React, {
+  ReactNode,
+  DetailedHTMLProps,
+  ButtonHTMLAttributes,
+  ReactElement,
+} from 'react';
+import {BasedButton} from './styles';
+import {SHAPE} from './constants';
 
-type StyledButtonT = {
-  shape?: Shape;
-  isLoading?: boolean;
-};
+export type Shape = keyof typeof SHAPE;
 
-const BasedButton = styled.button<StyledButtonT>`
-  display: ${({isLoading}) => (isLoading ? 'column' : 'row')};
-  flex-direction: column;
+export type ReactButtonProps = DetailedHTMLProps<
+  ButtonHTMLAttributes<HTMLButtonElement>,
+  HTMLButtonElement
+>;
 
-  &.default {
-    border-radius: 0;
-  }
-  &.pill {
-    border-radius: 30px;
-  }
-  &.round {
-    border-radius: 50%;
-    padding-left: 14px;
-    padding-right: 14px;
-  }
-  &.circle {
-    border-radius: 50%;
-  }
-`;
+export type ButtonPropsT = {
+  text: string;
+  className: string;
+  children: ReactNode;
+  shape: Shape;
+  isLoading: boolean;
+  isActive: boolean;
+  onClick: () => void;
+  disabled: boolean;
+} & ReactButtonProps;
 
 export default function Button({
   text,

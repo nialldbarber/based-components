@@ -7,8 +7,13 @@ export type StyledButtonT = {
 };
 
 export const BasedButton = styled.button<StyledButtonT>`
-  display: ${({isLoading}) => (isLoading ? 'column' : 'row')};
-  flex-direction: column;
+  display: inline-flex;
+  flex-direction: ${({isLoading}) => (isLoading ? 'column' : 'row')};
+  align-items: center;
+  justify-content: center;
+  border-width: 0;
+  border-style: none;
+  outline: none;
 
   &.default {
     border-radius: 0;

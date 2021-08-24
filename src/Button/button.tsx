@@ -21,8 +21,8 @@ export type ButtonPropsT = {
   shape: Shape;
   isLoading: boolean;
   isActive: boolean;
-  onClick: () => void;
   disabled: boolean;
+  onClick: () => void;
 } & ReactButtonProps;
 
 export default function Button({
@@ -33,14 +33,16 @@ export default function Button({
   children,
   isLoading = false,
   isActive = false,
-  onClick,
   disabled = false,
-}: Partial<ButtonPropsT>): ReactElement {
+  onClick,
+}: ButtonPropsT): ReactElement {
   return (
     <BasedButton
       type={type}
       onClick={onClick}
-      className={[className, shape, isActive, disabled].join(' ')}
+      className={[className, shape, isActive ? 'active' : ''].join(' ')}
+      isLoading={isLoading}
+      disabled={disabled}
     >
       {text && <span>{text}</span>}
       {children || ''}

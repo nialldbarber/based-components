@@ -15,15 +15,21 @@ yarn add based-components
 import React, {useState} from 'react';
 import {Form, Input, Button, useForm} from 'based-components';
 
+interface Values {
+  text: string;
+  type: string;
+  disabled: boolean;
+}
+
 function App() {
   const {handleSubmit} = useForm();
-  const [values] = useState([
+  const [values] = useState<Values[]>([
     {text: 'Name'},
     {text: 'Email'},
     {text: 'Password', type: 'password'},
   ]);
 
-  const submitData = (data) => console.log(data);
+  const submitData = (data: any): void => console.log(data);
 
   return (
     <Form onSubmit={handleSubmit(submitData)}>

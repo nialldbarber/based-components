@@ -1,27 +1,20 @@
 # based-components
 
-> Component library
-
-[![NPM](https://img.shields.io/npm/v/based-components.svg)](https://www.npmjs.com/package/based-components) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
-
 ## Install
 
 ```bash
-npm install --save based-components
+npm install based-components
+yarn add based-components
 ```
 
 ## Usage
 
 ```tsx
-import React, { Component } from 'react'
+import React from 'react';
+import {MyComponent} from 'based-components';
 
-import MyComponent from 'based-components'
-import 'based-components/dist/index.css'
-
-class Example extends Component {
-  render() {
-    return <MyComponent />
-  }
+function MyComponent() {
+  return <MyComponent />;
 }
 ```
 

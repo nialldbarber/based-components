@@ -1,45 +1,48 @@
-import React from 'react';
+import React, {ReactElement} from 'react';
 import styled from 'styled-components';
-import {SHAPE} from './constants';
+import {Shape, ButtonPropsT} from './types';
 
-const BasedButton = styled.button`
-  display: flex;
-`;
-
-export type ReactButtonProps = React.DetailedHTMLProps<
-  React.ButtonHTMLAttributes<HTMLButtonElement>,
-  HTMLButtonElement
->;
-
-type ButtonPropsT = {
-  text?: string;
-  className?: string;
-  children?: React.ReactNode;
-  shape?: keyof typeof SHAPE;
+type StyledButtonT = {
+  shape?: Shape;
   isLoading?: boolean;
-  isActive?: boolean;
-  onClick?: () => void;
-  disabled?: boolean;
-} & ReactButtonProps;
+};
+
+const BasedButton = styled.button<StyledButtonT>`
+  display: ${({isLoading}) => (isLoading ? 'column' : 'row')};
+  flex-direction: column;
+
+  &.default {
+    border-radius: 0;
+  }
+  &.pill {
+    border-radius: 30px;
+  }
+  &.round {
+    border-radius: 50%;
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+  &.circle {
+    border-radius: 50%;
+  }
+`;
 
 export default function Button({
   text,
   type = 'button',
   className,
-  shape,
+  shape = 'default',
   children,
   isLoading = false,
   isActive = false,
   onClick,
   disabled = false,
-  ...rest
-}: ButtonPropsT): JSX.Element {
+}: Partial<ButtonPropsT>): ReactElement {
   return (
     <BasedButton
       type={type}
-      {...rest}
       onClick={onClick}
-      className={[className, shape].join(' ')}
+      className={[className, shape, isActive, disabled].join(' ')}
     >
       {text && <span>{text}</span>}
       {children || ''}

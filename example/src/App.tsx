@@ -6,6 +6,7 @@ const App = () => {
     <>
       <Input text="hello" />
       <Button text="hi hi" />
+      <Button text="hi hi" shape="pill" />
     </>
   );
 };

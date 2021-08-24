@@ -1,15 +1,4 @@
-import React from 'react';
-import styles from './styles.module.css';
+import {Button} from './Button';
+import {Input} from './input';
 
-interface Props {
-  text: string;
-  number?: number;
-}
-
-export const ExampleComponent = ({text, number}: Props) => {
-  return (
-    <div className={styles.test}>
-      Example Component: {text} {number}
-    </div>
-  );
-};
+export {Button, Input};

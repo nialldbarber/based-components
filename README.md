@@ -42,6 +42,10 @@ function App() {
 }
 ```
 
+## Roadmap
+
+- Add styled-components for basic styling & overrides
+
 ## License
 
 MIT © [nialldbarber](https://github.com/nialldbarber)

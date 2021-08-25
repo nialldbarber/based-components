@@ -58,21 +58,21 @@ function App() {
 
 ## `<Button />` Props
 
-| Prop         | Type                                                   | Description                            | Default     |
-| ------------ | ------------------------------------------------------ | -------------------------------------- | ----------- |
-| text         | string                                                 | Button text                            | `''`        |
-| type         | 'submit' \| 'reset' \| 'button'                        | Button type                            | `'button'`  |
-| className    | string                                                 | Button className                       | `''`        |
-| customStyles | React.CSSProperties                                    | Custom css styles using a style object | `{}`        |
-| shape        | `default` \| `pill` \| `round` \| `circle` \| `square` | Shape of the button                    | `'default'` |
-| children     | React.ReactNode                                        | Children of the button                 | `null`      |
-| isLoading    | boolean                                                | The loading state of the button        | `false`     |
-| isActive     | boolean                                                | The active state of the button         | `false`     |
-| disabled     | boolean                                                | The disabled state of the button       | `false`     |
-| iconPre      | React.ReactNode                                        | Left sided icon                        | `null`      |
-| iconEnd      | React.ReactNode                                        | Right sided icon                       | `null`      |
-| onClick      | () => void                                             | onClick events sent to button          | `null`      |
-| forwardedRef | React.forwardRef<HTMLButtonElement>                    | Forwarded ref sent to button           | `null`      |
+| Prop           | Type                                                   | Description                            | Default     |
+| -------------- | ------------------------------------------------------ | -------------------------------------- | ----------- |
+| `text`         | `string`                                               | Button text                            | `''`        |
+| `type`         | `'submit' \| 'reset' \| 'button'`                      | Button type                            | `'button'`  |
+| `className`    | `string`                                               | Button `className`                     | `''`        |
+| `customStyles` | `React.CSSProperties`                                  | Custom css styles using a style object | `{}`        |
+| `shape`        | `default` \| `pill` \| `round` \| `circle` \| `square` | Shape of the button                    | `'default'` |
+| `children`     | `React.ReactNode`                                      | Children of the button                 | `null`      |
+| `isLoading`    | `boolean`                                              | The loading state of the button        | `false`     |
+| `isActive`     | `boolean`                                              | The active state of the button         | `false`     |
+| `disabled`     | `boolean`                                              | The disabled state of the button       | `false`     |
+| `iconPre`      | `React.ReactNode`                                      | Left sided icon                        | `null`      |
+| `iconEnd`      | `React.ReactNode`                                      | Right sided icon                       | `null`      |
+| `onClick`      | `() => void`                                           | `onClick` events sent to button        | `null`      |
+| `forwardedRef` | `React.forwardRef<HTMLButtonElement>`                  | Forwarded `ref` sent to button         | `null`      |
 
 ## Roadmap
 

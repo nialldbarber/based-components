@@ -42,7 +42,6 @@ function Button({
   iconPre,
   iconEnd,
   onClick,
-  ...rest
 }: ButtonPropsT): ReactElement {
   return (
     <BasedButton
@@ -56,7 +55,6 @@ function Button({
         iconPre,
         iconEnd,
         isActive,
-        rest,
       }}
     >
       {iconPre && iconPre}

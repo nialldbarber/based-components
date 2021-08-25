@@ -6,9 +6,9 @@ export type CardPropsT = {
   children?: ReactNode;
 };
 
-function Card({header, avatar, children}: CardPropsT): ReactElement {
+function Card({header, avatar, children, ...rest}: CardPropsT): ReactElement {
   return (
-    <div>
+    <div {...rest}>
       {header && (
         <div>
           {header}

@@ -17,10 +17,11 @@ function Divider({
   color,
   dashed,
   customStyles,
+  ...rest
 }: DividerPropsT): ReactElement {
   return (
     <BasedDivider
-      {...{direction, orientation, className, color, dashed}}
+      {...{direction, orientation, className, color, dashed, ...rest}}
       style={customStyles}
       role="separator"
     >

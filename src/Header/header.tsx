@@ -9,7 +9,7 @@ const HEADER_LIST = numberTuple(1, 2, 3, 4, 5);
 export type HeaderPropsT = {
   text?: string;
   level: typeof HEADER_LIST[number];
-  weight?: CSSProperties | any; // todo: <- figure out this type
+  weight?: any; // todo: <- figure out this type
   strong?: boolean;
   line?: boolean;
   className?: string;
@@ -22,7 +22,7 @@ export type HeaderPropsT = {
 function Header({
   text,
   level = 1,
-  weight = 'normal',
+  weight,
   strong = false,
   line,
   className,
@@ -30,13 +30,12 @@ function Header({
   iconPre,
   iconEnd,
   ...rest
-}: HeaderPropsT): ReactElement {
+}: HeaderPropsT | any): ReactElement {
   const H = `h${level}` as keyof JSX.IntrinsicElements;
 
   const header = (
     <H
-      {...{className}}
-      {...rest}
+      {...{className, ...rest}}
       style={{
         ...customStyles,
         fontWeight: strong ? 'bold' : weight,

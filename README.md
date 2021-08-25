@@ -97,7 +97,7 @@ iconEnd,
 | Prop           | Type                                  | Description                               | Default    |
 | -------------- | ------------------------------------- | ----------------------------------------- | ---------- |
 | `text`         | `string`                              | Button text                               | `''`       |
-| `level`        | `number`                              | Which type of h(number) it will be        | `''`       |
+| `level`        | `number`                              | Which type of `h(number)` it will be      | `''`       |
 | `weight`       | `number \| string`                    | Font weight of header                     | `'normal'` |
 | `strong`       | `boolean`                             | Defines a `bold` font weight              | `false`    |
 | `line`         | `boolean`                             | Gives header `text-decoration: underline` | `false`    |

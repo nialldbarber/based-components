@@ -1,36 +1,15 @@
-import React, {useState} from 'react';
-import {Input, Button} from 'based-components';
-import {MdFingerprint, MdFavoriteBorder} from 'react-icons/md';
-
-const styles = {
-  backgroundColor: 'dodgerblue',
-};
+import React from 'react';
+import {H} from 'based-components';
+import {MdBugReport, MdAssessment} from 'react-icons/md';
 
 export default function App() {
-  const [active, setActive] = useState(false);
-
   return (
     <>
-      <Input text="hello" />
-      <Button text="hi hi" />
-      <Button text="helloooo" shape="pill" />
-      <Button text=">" shape="default" isLoading />
-      <Button text="Blloooo" customStyles={styles} />
-      <Button shape="pill" onClick={() => alert('clicked!')}>
-        <span>Click me!</span>
-      </Button>
-      <Button
-        iconPre={<MdFingerprint />}
-        text="icons"
-        iconEnd={<MdFavoriteBorder />}
-      />
-
-      <Button
-        text="active"
-        isActive={active}
-        onClick={() => setActive(!active)}
-        customStyles={styles}
-      />
+      <H text="Heading 1" level={1} />
+      <H text="Heading 2" weight={900} level={2} />
+      <H text="Heading 3" level={3} />
+      <H text="Icon start test" level={1} iconPre={<MdBugReport size={40} />} />
+      <H text="Icon end test" level={1} iconEnd={<MdAssessment size={40} />} />
     </>
   );
 }

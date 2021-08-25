@@ -1,12 +1,22 @@
-import React, {ReactElement} from 'react';
-// import {BasedButton} from './styles';
-// import {SHAPE} from './constants';
+import React, {ReactNode, ReactElement} from 'react';
 
 export type CardPropsT = {
-  text?: string;
+  header?: string;
+  avatar?: string;
+  children?: ReactNode;
 };
 
-function Card({text}: CardPropsT): ReactElement {
-  return <div>{text}</div>;
+function Card({header, avatar, children}: CardPropsT): ReactElement {
+  return (
+    <div>
+      {header && (
+        <div>
+          {header}
+          {avatar}
+        </div>
+      )}
+      <div>{children}</div>
+    </div>
+  );
 }
 export default Card;

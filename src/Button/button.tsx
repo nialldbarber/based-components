@@ -68,8 +68,9 @@ function Button({
   );
 }
 
-const ForwardedButton = React.forwardRef<ButtonPropsT, HTMLButtonElement>(
-  (props: ButtonPropsT, ref) => <Button forwardedRef={ref} {...props} />
-);
-ForwardedButton.displayName = 'Button';
-export default ForwardedButton;
+// const ForwardedButton = React.forwardRef<ButtonPropsT, HTMLButtonElement>(
+//   (props: ButtonPropsT, ref) => <Button forwardedRef={ref} {...props} />
+// );
+// ForwardedButton.displayName = 'Button';
+// export default ForwardedButton;
+export default Button;

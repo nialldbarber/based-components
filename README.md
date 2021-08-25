@@ -96,16 +96,16 @@ iconEnd,
 
 | Prop           | Type                                  | Description                               | Default    |
 | -------------- | ------------------------------------- | ----------------------------------------- | ---------- |
-| `text`         | `string`                              | Button text                               | `''`       |
+| `text`         | `string`                              | Header text                               | `''`       |
 | `level`        | `number`                              | Which type of `h(number)` it will be      | `''`       |
 | `weight`       | `number \| string`                    | Font weight of header                     | `'normal'` |
 | `strong`       | `boolean`                             | Defines a `bold` font weight              | `false`    |
 | `line`         | `boolean`                             | Gives header `text-decoration: underline` | `false`    |
-| `className`    | `string`                              | Button `className`                        | `''`       |
+| `className`    | `string`                              | Header `className`                        | `''`       |
 | `customStyles` | `React.CSSProperties`                 | Custom css styles using a style object    | `{}`       |
 | `iconPre`      | `React.ReactNode`                     | Left sided icon                           | `null`     |
 | `iconEnd`      | `React.ReactNode`                     | Right sided icon                          | `null`     |
-| `forwardedRef` | `React.forwardRef<HTMLButtonElement>` | Forwarded `ref` sent to button            | `null`     |
+| `forwardedRef` | `React.forwardRef<HTMLButtonElement>` | Forwarded `ref` sent to header            | `null`     |
 
 ## Todos
 

@@ -1,4 +1,4 @@
-# based-components
+# Based Components
 
 ## 🚧 WIP! 🚧
 
@@ -21,31 +21,40 @@ import {Form, Input, Button, useForm} from 'based-components';
 interface Values {
   text: string;
   type: string;
-  disabled: boolean;
 }
 
 function App() {
   const {handleSubmit} = useForm();
+  const [loading, setLoading] = useState<boolean>(false);
+  const [active, setActive] = useState<boolean>(false);
   const [values] = useState<Values[]>([
     {text: 'Name'},
     {text: 'Email'},
     {text: 'Password', type: 'password'},
   ]);
 
-  const submitData = (data: any): void => console.log(data);
+  function submitData(data: any): void {
+    setLoading(false);
+    console.log(data);
+  }
 
   return (
     <Form onSubmit={handleSubmit(submitData)}>
       {values.map(({type, text, password = false}) => (
         <Input type={type || 'text'} text={text} />
       ))}
-      <Button text="Submit" />
+      <Button
+        text="Submit"
+        shape="pill"
+        isLoading={loading}
+        setActive={() => setActive(!active)}
+      />
     </Form>
   );
 }
 ```
 
-# Props
+# Documentation
 
 ## `<Button />` Props
 

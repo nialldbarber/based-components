@@ -3,6 +3,7 @@ import React, {
   DetailedHTMLProps,
   ButtonHTMLAttributes,
   ReactElement,
+  CSSProperties,
 } from 'react';
 import {BasedButton} from './styles';
 import {SHAPE} from './constants';
@@ -15,38 +16,52 @@ export type ReactButtonProps = DetailedHTMLProps<
 >;
 
 export type ButtonPropsT = {
-  text: string;
-  className: string;
-  children: ReactNode;
-  shape: Shape;
-  isLoading: boolean;
-  isActive: boolean;
-  disabled: boolean;
-  onClick: () => void;
+  text?: string;
+  className?: string;
+  children?: ReactNode;
+  customStyles?: CSSProperties;
+  shape?: Shape;
+  isLoading?: boolean;
+  isActive?: boolean;
+  disabled?: boolean;
+  iconPre?: ReactNode;
+  iconEnd?: ReactNode;
+  onClick?: () => void;
 } & ReactButtonProps;
 
 export default function Button({
   text,
   type = 'button',
   className,
+  customStyles,
   shape = 'default',
   children,
   isLoading = false,
   isActive = false,
   disabled = false,
+  iconPre,
+  iconEnd,
   onClick,
-}: Partial<ButtonPropsT>): ReactElement {
+}: ButtonPropsT): ReactElement {
   return (
     <BasedButton
       type={type}
       onClick={onClick}
-      className={[className, shape, isActive ? 'active' : ''].join(' ')}
-      isLoading={isLoading}
-      disabled={disabled}
+      className={[className, shape].join(' ')}
+      style={customStyles}
+      {...{
+        isLoading,
+        disabled,
+        iconPre,
+        iconEnd,
+        isActive,
+      }}
     >
+      {iconPre && iconPre}
       {text && <span>{text}</span>}
       {children || ''}
       {isLoading && <p>Spinner here</p>}
+      {iconEnd && iconEnd}
     </BasedButton>
   );
 }

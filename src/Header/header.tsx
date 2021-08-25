@@ -2,7 +2,7 @@ import React, {ReactNode, ReactElement, CSSProperties} from 'react';
 import {BasedHeader} from './styles';
 
 export const stringTuple = <T extends string[]>(...args: T) => args;
-export const numberedTuple = <T extends number[]>(...args: T) => args;
+export const numberTuple = <T extends number[]>(...args: T) => args;
 
 const HEADER_LIST = numberedTuple(1, 2, 3, 4, 5);
 

@@ -47,7 +47,7 @@ function App() {
         text="Submit"
         shape="pill"
         isLoading={loading}
-        setActive={() => setActive(!active)}
+        onClick={() => setActive(!active)}
       />
     </Form>
   );

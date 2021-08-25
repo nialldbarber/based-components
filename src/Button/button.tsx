@@ -29,7 +29,7 @@ export type ButtonPropsT = {
   onClick?: () => void;
 } & ReactButtonProps;
 
-export default function Button({
+function Button({
   text,
   type = 'button',
   className,
@@ -42,13 +42,15 @@ export default function Button({
   iconPre,
   iconEnd,
   onClick,
-}: ButtonPropsT): ReactElement {
+  forwardedRef,
+}: ButtonPropsT & {forwardedRef: any}): ReactElement {
   return (
     <BasedButton
       type={type}
       onClick={onClick}
       className={[className, shape].join(' ')}
       style={customStyles}
+      ref={forwardedRef}
       {...{
         isLoading,
         disabled,
@@ -65,3 +67,9 @@ export default function Button({
     </BasedButton>
   );
 }
+
+const ForwardedButton = React.forwardRef<ButtonPropsT, HTMLButtonElement>(
+  (props: ButtonPropsT, ref) => <Button forwardedRef={ref} {...props} />
+);
+ForwardedButton.displayName = 'Button';
+export default ForwardedButton;

@@ -42,15 +42,13 @@ function Button({
   iconPre,
   iconEnd,
   onClick,
-  forwardedRef,
-}: ButtonPropsT & {forwardedRef: any}): ReactElement {
+}: ButtonPropsT): ReactElement {
   return (
     <BasedButton
       type={type}
       onClick={onClick}
       className={[className, shape].join(' ')}
       style={customStyles}
-      ref={forwardedRef}
       {...{
         isLoading,
         disabled,

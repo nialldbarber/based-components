@@ -1,7 +1,5 @@
 # Based Components
 
-## 🚧 WIP! 🚧
-
 ## Install
 
 ```bash
@@ -11,6 +9,16 @@ npm install based-components
 # using yarn
 yarn add based-components
 ```
+
+## 🚧 WIP! 🚧
+
+This is work in progress and nowhere near ready to use. Feel free to install it but be prepared for a few errors! 😉
+
+## What's the point?!
+
+This component library isn't like your typical design system (like Material-UI, Ant Design, Bootstrap etc). I wanted to create a highly customisable library that has all the basics covered and easy ways to scaffold a component.
+
+This is essentially a library where the functionality is ready made, but the styles and extra logic are left entirely up to the developer.
 
 ## Usage
 
@@ -74,9 +82,11 @@ function App() {
 | `onClick`      | `() => void`                                           | `onClick` events sent to button        | `null`      |
 | `forwardedRef` | `React.forwardRef<HTMLButtonElement>`                  | Forwarded `ref` sent to button         | `null`      |
 
-## Roadmap
+## Todos
 
-- Add styled-components for basic styling & overrides
+- [ ] Add styled-components for basic styling & overrides
+- [ ] `<Button />`
+  - [ ] Get forwardRef working with typescript
 
 ## License
 

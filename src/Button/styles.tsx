@@ -1,13 +1,12 @@
 import styled, {css} from 'styled-components';
 import {darken, rgba} from 'polished';
 import {ButtonPropsT} from './button';
+import {white} from '../utils/colors';
 
 type BackgroundT = {
   backgroundColor?: string;
   background?: string;
 };
-
-const white = '#fff';
 
 const getBackgroundColour = ({style}: BackgroundT | any) => {
   const bg = style?.backgroundColor || style?.background || white;

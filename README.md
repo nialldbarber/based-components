@@ -84,16 +84,6 @@ function App() {
 
 ## `<H />` (header) Props
 
-text,
-level,
-weight,
-strong,
-line,
-className,
-customStyles,
-iconPre,
-iconEnd,
-
 | Prop           | Type                                  | Description                               | Default    |
 | -------------- | ------------------------------------- | ----------------------------------------- | ---------- |
 | `text`         | `string`                              | Header text                               | `''`       |

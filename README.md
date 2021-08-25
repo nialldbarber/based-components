@@ -16,7 +16,7 @@ This is work in progress and nowhere near ready to use. Feel free to install it 
 
 ## What's the point?!
 
-This component library isn't like your typical design system (like Material-UI, Ant Design, Bootstrap etc). I wanted to create a highly customisable library that has all the basics covered and easy ways to scaffold a component.
+This component library isn't like your typical design system (like `Material-UI`, `Ant Design`, `Bootstrap` etc). I wanted to create a highly customisable library that has all the basics covered and easy ways to scaffold a component.
 
 This is essentially a library where the functionality is ready made, but the styles and extra logic are left entirely up to the developer.
 
@@ -81,6 +81,31 @@ function App() {
 | `iconEnd`      | `React.ReactNode`                                      | Right sided icon                       | `null`      |
 | `onClick`      | `() => void`                                           | `onClick` events sent to button        | `null`      |
 | `forwardedRef` | `React.forwardRef<HTMLButtonElement>`                  | Forwarded `ref` sent to button         | `null`      |
+
+## `<H />` (header) Props
+
+text,
+level,
+weight,
+strong,
+line,
+className,
+customStyles,
+iconPre,
+iconEnd,
+
+| Prop           | Type                                  | Description                               | Default    |
+| -------------- | ------------------------------------- | ----------------------------------------- | ---------- |
+| `text`         | `string`                              | Button text                               | `''`       |
+| `level`        | `number`                              | Which type of h(number) it will be        | `''`       |
+| `weight`       | `number \| string`                    | Font weight of header                     | `'normal'` |
+| `strong`       | `boolean`                             | Defines a `bold` font weight              | `false`    |
+| `line`         | `boolean`                             | Gives header `text-decoration: underline` | `false`    |
+| `className`    | `string`                              | Button `className`                        | `''`       |
+| `customStyles` | `React.CSSProperties`                 | Custom css styles using a style object    | `{}`       |
+| `iconPre`      | `React.ReactNode`                     | Left sided icon                           | `null`     |
+| `iconEnd`      | `React.ReactNode`                     | Right sided icon                          | `null`     |
+| `forwardedRef` | `React.forwardRef<HTMLButtonElement>` | Forwarded `ref` sent to button            | `null`     |
 
 ## Todos
 

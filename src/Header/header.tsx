@@ -23,7 +23,7 @@ function Header({
   text,
   level,
   weight,
-  strong,
+  strong = false,
   line,
   className,
   customStyles,

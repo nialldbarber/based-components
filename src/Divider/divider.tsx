@@ -1,6 +1,6 @@
 import React, {ReactElement, CSSProperties} from 'react';
 import styled, {css} from 'styled-components';
-import {dividerLine} from '../utils/colors';
+import {dividerLine} from '../constants/colors';
 
 export type DividerPropsT = {
   direction?: 'horizontal' | 'vertical';

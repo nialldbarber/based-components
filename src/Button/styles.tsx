@@ -1,7 +1,7 @@
 import styled, {css} from 'styled-components';
 import {darken, rgba} from 'polished';
 import {ButtonPropsT} from './button';
-import {white} from '../utils/colors';
+import {white} from '../constants/colors';
 
 type BackgroundT = {
   backgroundColor?: string;

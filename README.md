@@ -87,7 +87,7 @@ function App() {
 | Prop           | Type                                  | Description                               | Default    |
 | -------------- | ------------------------------------- | ----------------------------------------- | ---------- |
 | `text`         | `string`                              | Header text                               | `''`       |
-| `level`        | `number`                              | Which type of `h(number)` it will be      | `''`       |
+| `level`        | `number`                              | Which type of `h(number)` it will be      | `1`        |
 | `weight`       | `number \| string`                    | Font weight of header                     | `'normal'` |
 | `strong`       | `boolean`                             | Defines a `bold` font weight              | `false`    |
 | `line`         | `boolean`                             | Gives header `text-decoration: underline` | `false`    |

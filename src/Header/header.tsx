@@ -21,8 +21,8 @@ export type HeaderPropsT = {
 
 function Header({
   text,
-  level,
-  weight,
+  level = 1,
+  weight = 'normal',
   strong = false,
   line,
   className,
@@ -39,7 +39,7 @@ function Header({
       {...rest}
       style={{
         ...customStyles,
-        fontWeight: strong ? 'bold' : weight ? weight : 'normal',
+        fontWeight: strong ? 'bold' : weight,
         textDecoration: line ? 'underline' : 'none',
       }}
     >

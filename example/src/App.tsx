@@ -7,6 +7,7 @@ const styles: Record<string, string> = {
 };
 
 export default function App() {
+  const [active, setActive] = useState<boolean>(false);
   const [height, setHeight] = useState<number>(0);
   const ref = useRef<any>();
 
@@ -29,6 +30,15 @@ export default function App() {
         loadingColor="red"
       />
       <Button text="poop" isLoading />
+      <Button text="click me" onClick={() => console.log('hello')} />
+      <Button
+        text="poop"
+        isActive={active}
+        isLoading={active}
+        loadingSize={10}
+        customStyles={styles}
+        onClick={() => setActive(!active)}
+      />
     </>
   );
 }

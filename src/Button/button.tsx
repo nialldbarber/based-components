@@ -29,6 +29,7 @@ export interface ButtonPropsT
   customStyles?: CSSProperties;
   shape?: Shape;
   isLoading?: boolean;
+  loadingSize?: number;
   loadingColor?: string;
   isActive?: boolean;
   disabled?: boolean;
@@ -48,6 +49,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonPropsT>(
       shape = 'default',
       isLoading = false,
       loadingColor = white,
+      loadingSize = 30,
       isActive = false,
       disabled = false,
       iconPre,
@@ -72,7 +74,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonPropsT>(
         {iconPre && iconPre}
         {text && <span>{text}</span>}
         {children || ''}
-        {isLoading && <LoadingSpinner {...{loadingColor}} />}
+        {isLoading && <LoadingSpinner {...{loadingColor, loadingSize}} />}
         {iconEnd && iconEnd}
       </BasedButton>
     );

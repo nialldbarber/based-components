@@ -43,7 +43,7 @@ const getActiveStyles = ({style}: ButtonStylesT) => {
 
 export const BasedButton = styled.button<ButtonStylesT>`
   display: inline-flex;
-  flex-direction: ${({$isLoading}) => ($isLoading ? 'column' : 'row')};
+  flex-direction: ${({$isLoading}) => ($isLoading ? 'row' : 'column')};
   align-items: center;
   justify-content: center;
   padding: 0.5rem 1rem;

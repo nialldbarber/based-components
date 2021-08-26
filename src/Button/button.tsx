@@ -5,6 +5,7 @@ import React, {
   ButtonHTMLAttributes,
   ReactElement,
   CSSProperties,
+  ComponentPropsWithoutRef,
 } from 'react';
 import {CircleSpinnerLoader} from '../LoadingSpinner';
 import {BasedButton} from './styles';
@@ -19,7 +20,7 @@ export type ReactButtonProps = DetailedHTMLProps<
 
 export interface ButtonPropsT
   extends ReactButtonProps,
-    React.ComponentPropsWithoutRef<'button'> {
+    ComponentPropsWithoutRef<'button'> {
   text?: string;
   className?: string;
   children?: ReactNode;

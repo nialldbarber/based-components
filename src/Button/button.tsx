@@ -6,6 +6,7 @@ import React, {
   ReactElement,
   CSSProperties,
   ComponentPropsWithoutRef,
+  MouseEvent,
 } from 'react';
 import {LoadingSpinner} from '../LoadingSpinner';
 import {BasedButton} from './styles';
@@ -33,7 +34,7 @@ export interface ButtonPropsT
   disabled?: boolean;
   iconPre?: ReactNode;
   iconEnd?: ReactNode;
-  onClick?: () => void;
+  onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
 }
 
 const Button = forwardRef<HTMLButtonElement, ButtonPropsT>(
@@ -62,13 +63,11 @@ const Button = forwardRef<HTMLButtonElement, ButtonPropsT>(
         style={customStyles}
         className={[className, shape].join(' ')}
         onClick={onClick}
-        {...{
-          isLoading,
-          isActive,
-          disabled,
-          iconPre,
-          iconEnd,
-        }}
+        $isLoading={isLoading}
+        $isActive={isActive}
+        $disabled={disabled}
+        $iconPre={iconPre}
+        $iconEnd={iconEnd}
       >
         {iconPre && iconPre}
         {text && <span>{text}</span>}

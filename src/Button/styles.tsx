@@ -1,15 +1,25 @@
+import {ReactNode, CSSProperties} from 'react';
 import styled, {css} from 'styled-components';
 import {darken, rgba} from 'polished';
 import {ButtonPropsT} from './button';
 import {white} from '../constants/colors';
 
-type BackgroundT = {
+interface BackgroundT extends ButtonPropsT {
   backgroundColor?: string;
   background?: string;
-};
+}
 
-const getBackgroundColour = ({style}: BackgroundT | any) => {
-  const bg = style?.backgroundColor || style?.background || white;
+export interface ButtonStylesT extends BackgroundT {
+  $isLoading: boolean;
+  $isActive: boolean;
+  $disabled: boolean;
+  $iconPre: ReactNode;
+  $iconEnd: ReactNode;
+  style?: CSSProperties;
+}
+
+const getBackgroundColour = ({style}: ButtonStylesT) => {
+  const bg: any = style?.backgroundColor || style?.background || white;
 
   return css`
     background-color: ${bg};
@@ -22,7 +32,7 @@ const getBackgroundColour = ({style}: BackgroundT | any) => {
   `;
 };
 
-const getActiveStyles = ({style}: BackgroundT | any) => {
+const getActiveStyles = ({style}: ButtonStylesT) => {
   const bg = style?.backgroundColor || style?.background || white;
 
   return css`
@@ -31,9 +41,9 @@ const getActiveStyles = ({style}: BackgroundT | any) => {
   `;
 };
 
-export const BasedButton = styled.button<ButtonPropsT>`
+export const BasedButton = styled.button<ButtonStylesT>`
   display: inline-flex;
-  flex-direction: ${({isLoading}) => (isLoading ? 'column' : 'row')};
+  flex-direction: ${({$isLoading}) => ($isLoading ? 'column' : 'row')};
   align-items: center;
   justify-content: center;
   padding: 0.5rem 1rem;
@@ -42,10 +52,10 @@ export const BasedButton = styled.button<ButtonPropsT>`
   outline: none;
   text-decoration: none;
   appearance: none;
-  cursor: ${({disabled}) => (disabled ? 'default' : 'pointer')};
+  cursor: ${({$disabled}) => ($disabled ? 'default' : 'pointer')};
   transition: opacity 0.125s ease;
   ${getBackgroundColour};
-  ${({isActive}) => isActive && getActiveStyles}
+  ${({$isActive}) => $isActive && getActiveStyles}
 
   &.default {
     border-radius: 0;

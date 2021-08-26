@@ -28,6 +28,7 @@ export default function App() {
         isLoading
         loadingColor="red"
       />
+      <Button text="poop" isLoading />
     </>
   );
 }

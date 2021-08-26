@@ -106,7 +106,8 @@ const CircleSpinnerLoader = ({
   const countBalls = 7;
   const ballSize = size && size / 5;
   const angle = 360 / countBalls;
-  return loading ? (
+
+  const ld = (
     <Wrapper size={size}>
       {getBalls({
         countBalls,
@@ -118,7 +119,9 @@ const CircleSpinnerLoader = ({
         ballSize,
       })}
     </Wrapper>
-  ) : null;
+  );
+
+  return loading ? ld : <p style={{display: 'none'}} />;
 };
 
 export default CircleSpinnerLoader;

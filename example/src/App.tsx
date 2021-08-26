@@ -15,6 +15,7 @@ export default function App() {
       <Button ref={ref}>
         The height of this button is {height || 'dunno!'}
       </Button>
+      <Button type="button" text="hello" isLoading isActive />
     </>
   );
 }

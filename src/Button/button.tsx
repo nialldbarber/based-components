@@ -10,8 +10,6 @@ import {CircleSpinnerLoader} from '../LoadingSpinner';
 import {BasedButton} from './styles';
 import {SHAPE} from './constants';
 
-export type ButtonProps = JSX.IntrinsicElements['button'];
-
 export type Shape = keyof typeof SHAPE;
 
 export type ReactButtonProps = DetailedHTMLProps<
@@ -19,7 +17,9 @@ export type ReactButtonProps = DetailedHTMLProps<
   HTMLButtonElement
 >;
 
-export type ButtonPropsT = {
+export interface ButtonPropsT
+  extends ReactButtonProps,
+    React.ComponentPropsWithoutRef<'button'> {
   text?: string;
   className?: string;
   children?: ReactNode;
@@ -31,10 +31,9 @@ export type ButtonPropsT = {
   iconPre?: ReactNode;
   iconEnd?: ReactNode;
   onClick?: () => void;
-  ref?: any;
-} & ReactButtonProps;
+}
 
-const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+const Button = forwardRef<HTMLButtonElement, ButtonPropsT>(
   (
     {
       text,
@@ -49,7 +48,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       iconPre,
       iconEnd,
       onClick,
-    }: ButtonPropsT,
+    },
     ref
   ): ReactElement => {
     return (
@@ -59,13 +58,11 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         onClick={onClick}
         className={[className, shape].join(' ')}
         style={customStyles}
-        {...{
-          isLoading,
-          disabled,
-          iconPre,
-          iconEnd,
-          isActive,
-        }}
+        isLoading={isLoading}
+        disabled={disabled}
+        iconPre={iconPre}
+        iconEnd={iconEnd}
+        isActive={isActive}
       >
         {iconPre && iconPre}
         {text && <span>{text}</span>}

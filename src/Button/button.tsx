@@ -7,7 +7,7 @@ import React, {
   CSSProperties,
   ComponentPropsWithoutRef,
 } from 'react';
-import {CircleSpinnerLoader} from '../LoadingSpinner';
+import {LoadingSpinner} from '../LoadingSpinner';
 import {BasedButton} from './styles';
 import {SHAPE} from './constants';
 
@@ -27,6 +27,7 @@ export interface ButtonPropsT
   customStyles?: CSSProperties;
   shape?: Shape;
   isLoading?: boolean;
+  loadingColor?: string;
   isActive?: boolean;
   disabled?: boolean;
   iconPre?: ReactNode;
@@ -44,6 +45,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonPropsT>(
       shape = 'default',
       children,
       isLoading = false,
+      loadingColor = '#fff',
       isActive = false,
       disabled = false,
       iconPre,
@@ -59,16 +61,18 @@ const Button = forwardRef<HTMLButtonElement, ButtonPropsT>(
         onClick={onClick}
         className={[className, shape].join(' ')}
         style={customStyles}
-        isLoading={isLoading}
-        disabled={disabled}
-        iconPre={iconPre}
-        iconEnd={iconEnd}
-        isActive={isActive}
+        {...{
+          isLoading,
+          disabled,
+          iconPre,
+          iconEnd,
+          isActive,
+        }}
       >
         {iconPre && iconPre}
         {text && <span>{text}</span>}
         {children || ''}
-        {isLoading && <CircleSpinnerLoader />}
+        {isLoading && <LoadingSpinner {...{loadingColor}} />}
         {iconEnd && iconEnd}
       </BasedButton>
     );

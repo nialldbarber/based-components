@@ -1,1 +1,1 @@
-export {default as CircleSpinnerLoader} from './loading-spinner';
+export {default as LoadingSpinner} from './loading-spinner';

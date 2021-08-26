@@ -10,6 +10,7 @@ import React, {
 import {LoadingSpinner} from '../LoadingSpinner';
 import {BasedButton} from './styles';
 import {SHAPE} from './constants';
+import {white} from '../constants/colors';
 
 export type Shape = keyof typeof SHAPE;
 
@@ -41,11 +42,11 @@ const Button = forwardRef<HTMLButtonElement, ButtonPropsT>(
       text,
       type = 'button',
       className,
+      children,
       customStyles,
       shape = 'default',
-      children,
       isLoading = false,
-      loadingColor = '#fff',
+      loadingColor = white,
       isActive = false,
       disabled = false,
       iconPre,
@@ -58,15 +59,15 @@ const Button = forwardRef<HTMLButtonElement, ButtonPropsT>(
       <BasedButton
         ref={ref}
         type={type}
-        onClick={onClick}
-        className={[className, shape].join(' ')}
         style={customStyles}
+        className={[className, shape].join(' ')}
+        onClick={onClick}
         {...{
           isLoading,
+          isActive,
           disabled,
           iconPre,
           iconEnd,
-          isActive,
         }}
       >
         {iconPre && iconPre}

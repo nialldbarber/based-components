@@ -20,11 +20,11 @@ export default function App() {
       <Button ref={ref}>
         The height of this button is {height || 'dunno!'}
       </Button>
-      <Button type="button" text="hello" isLoading customStyles={styles} />
+      <Button type="button" text="hello" customStyles={styles} />
       <Button
         type="submit"
         text="Submit"
-        customStyles={styles}
+        customStyles={{background: 'pink'}}
         isLoading
         loadingColor="red"
       />

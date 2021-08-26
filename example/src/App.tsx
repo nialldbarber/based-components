@@ -1,38 +1,20 @@
-import React, {useState} from 'react';
-import {H, Button, ProgressBar} from 'based-components';
-
-const barContainerStyles = {
-  background: 'red',
-};
-
-const barStyles = {
-  background: 'dodgerblue',
-};
+import React, {useEffect, useRef, useState} from 'react';
+import {Button} from 'based-components';
 
 export default function App() {
-  const [val, setVal] = useState(Math.round(Math.random() * 100));
+  const [height, setHeight] = useState<number>(0);
+  const ref = useRef<any>();
 
-  const randomVal = () => setVal(Math.round(Math.random() * 100));
+  useEffect(() => {
+    setHeight(ref?.current?.clientHeight);
+    console.log(ref?.current);
+  }, []);
 
   return (
     <>
-      <Button onClick={randomVal}>
-        <span>Click me!</span>
+      <Button ref={ref}>
+        The height of this button is {height || 'dunno!'}
       </Button>
-      <ProgressBar value={val} height={10} />
-      <ProgressBar value={val} height={20} />
-      <ProgressBar value={val} height={40} />
-      <ProgressBar value={val} height={50} />
-      <ProgressBar value={val} height={50} />
-      <ProgressBar
-        value={val}
-        height={60}
-        customBarStyles={barStyles}
-        customStyles={barContainerStyles}
-      />
-      <H text="Heading 1" level={1} />
-      <H text="Heading 2" level={2} />
-      <H text="Heading 3" level={3} />
     </>
   );
 }

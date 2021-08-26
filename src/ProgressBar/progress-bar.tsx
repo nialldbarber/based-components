@@ -4,6 +4,7 @@ import {BasedProgressBar, Progress} from './styles';
 export type ProgressBarPropsT = {
   value?: number;
   height?: number;
+  speed?: number;
   customStyles?: CSSProperties;
   customBarStyles?: CSSProperties;
 };
@@ -11,6 +12,7 @@ export type ProgressBarPropsT = {
 function ProgressBar({
   value,
   height,
+  speed = 0.325,
   customStyles,
   customBarStyles,
   ...rest
@@ -20,7 +22,7 @@ function ProgressBar({
   return (
     <BasedProgressBar {...{...rest}} style={customStyles}>
       <Progress
-        {...{height}}
+        {...{height, speed}}
         value={val}
         style={customBarStyles}
         role="progressbar"

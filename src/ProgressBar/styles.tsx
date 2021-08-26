@@ -14,5 +14,5 @@ export const Progress = styled.div<ProgressBarPropsT>`
   width: ${({value}) => value}%;
   height: ${({height}) => height}px;
   border-radius: ${({height}) => height && height / 2}px;
-  transition: width 0.5s cubic-bezier(0.19, 0.58, 0.66, 0.42);
+  transition: width ${({speed}) => speed}s cubic-bezier(0.19, 0.58, 0.66, 0.42);
 `;

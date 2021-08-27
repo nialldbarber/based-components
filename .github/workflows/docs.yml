@@ -15,7 +15,6 @@ jobs:
 
       - name: npm install
         run: |
-          npm ci
-          npm run build
+          console.log("testing")
       # - name: npm test
       #   run: npm test

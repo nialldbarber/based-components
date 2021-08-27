@@ -15,6 +15,6 @@ jobs:
 
       - name: npm install
         run: |
-          console.log("testing")
+          echo "testing"
       # - name: npm test
       #   run: npm test

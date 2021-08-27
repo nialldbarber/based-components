@@ -12,11 +12,11 @@ interface BackgroundT extends ButtonPropsT {
 
 export interface ButtonStylesT extends BackgroundT {
   $kind?: Kind;
-  $isLoading: boolean;
-  $isActive: boolean;
-  $disabled: boolean;
-  $iconPre: ReactNode;
-  $iconEnd: ReactNode;
+  $isLoading?: boolean;
+  $isActive?: boolean;
+  $disabled?: boolean;
+  $iconPre?: ReactNode;
+  $iconEnd?: ReactNode;
   style?: CSSProperties;
 }
 

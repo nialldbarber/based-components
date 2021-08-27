@@ -43,10 +43,12 @@ const getKindStyles = ($kind: string) => {
 const getActiveStyles = ($kind: string) => {
   const {main, counter, outline} = KIND_COLOURS[$kind];
   return css`
-    border-color: ${outline || main};
-    box-shadow: inset 0 0 0 1px ${main}, inset 0 0 0 2px ${counter};
-    background-color: ${outline || main};
-    color: ${outline ? main : counter};
+    &:focus {
+      border-color: ${outline || main};
+      box-shadow: inset 0 0 0 1px ${main}, inset 0 0 0 2px ${counter};
+      background-color: ${outline || main};
+      color: ${outline ? main : counter};
+    }
   `;
 };
 
@@ -63,11 +65,9 @@ export const BasedButton = styled.button<ButtonStylesT>`
   appearance: none;
   cursor: ${({$disabled}) => ($disabled ? 'default' : 'pointer')};
   transition: opacity 0.125s ease;
-  ${({$kind}) => getKindStyles($kind as KindT)}
 
-  &:focus {
-    ${({$kind}) => getActiveStyles($kind as KindT)}
-  }
+  ${({$kind}) => getKindStyles($kind as KindT)}
+  ${({$kind}) => getActiveStyles($kind as KindT)}
 
   &.default {
     border-radius: 0;

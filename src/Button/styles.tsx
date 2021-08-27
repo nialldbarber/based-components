@@ -1,8 +1,9 @@
 import {ReactNode, CSSProperties} from 'react';
 import styled, {css} from 'styled-components';
-import {darken, rgba} from 'polished';
-import {ButtonPropsT} from './button';
-import {white} from '../constants/colors';
+import {ButtonPropsT, Kind} from './button';
+import {KIND_COLOURS, anim} from '../constants/colors';
+
+export type KindT = keyof typeof KIND_COLOURS;
 
 interface BackgroundT extends ButtonPropsT {
   backgroundColor?: string;
@@ -10,6 +11,7 @@ interface BackgroundT extends ButtonPropsT {
 }
 
 export interface ButtonStylesT extends BackgroundT {
+  $kind?: Kind;
   $isLoading: boolean;
   $isActive: boolean;
   $disabled: boolean;
@@ -18,24 +20,33 @@ export interface ButtonStylesT extends BackgroundT {
   style?: CSSProperties;
 }
 
-const getBackgroundColour = ({style}: ButtonStylesT) => {
-  const bg: any = style?.backgroundColor || style?.background || white;
+const getKindStyles = ($kind: string) => {
+  const {main, counter, hovered, hoveredColor, outline} = KIND_COLOURS[$kind];
   return css`
-    background-color: ${bg};
+    background: ${main};
+    color: ${counter};
+    border: 1px solid ${outline || 'transparent'};
+    transition: background 70ms cubic-bezier(${anim}),
+      box-shadow 70ms cubic-bezier(${anim}),
+      border-color 70ms cubic-bezier(${anim}),
+      outline 70ms cubic-bezier(${anim});
+
     &:hover {
-      background-color: ${darken(
-        0.2,
-        bg
-      )} !important; // <- only way to override inline styles 😞
+      background-color: ${hovered};
+      color: ${hoveredColor && hoveredColor
+        ? hoveredColor && hoveredColor
+        : counter};
     }
   `;
 };
 
-const getActiveStyles = ({style}: ButtonStylesT) => {
-  const bg = style?.backgroundColor || style?.background || white;
+const getActiveStyles = ($kind: string) => {
+  const {main, counter, outline} = KIND_COLOURS[$kind];
   return css`
-    box-shadow: 0px 0 0 3px ${rgba(bg, 1)};
-    outline: 1px solid ${white};
+    border-color: ${outline || main};
+    box-shadow: inset 0 0 0 1px ${main}, inset 0 0 0 2px ${counter};
+    background-color: ${outline || main};
+    color: ${outline ? main : counter};
   `;
 };
 
@@ -52,8 +63,11 @@ export const BasedButton = styled.button<ButtonStylesT>`
   appearance: none;
   cursor: ${({$disabled}) => ($disabled ? 'default' : 'pointer')};
   transition: opacity 0.125s ease;
-  ${getBackgroundColour};
-  ${({$isActive}) => $isActive && getActiveStyles}
+  ${({$kind}) => getKindStyles($kind as KindT)}
+
+  &:focus {
+    ${({$kind}) => getActiveStyles($kind as KindT)}
+  }
 
   &.default {
     border-radius: 0;

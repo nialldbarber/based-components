@@ -100,7 +100,7 @@ function App() {
 ## Todos
 
 - [ ] Add styled-components for basic styling & overrides
-- [ ] `<Button />`
+- `<Button />`
   - [ ] add colours <Button kind="primary" /> etc
   - [ ] add button sizes
   - [ ] option for a skeleton loader

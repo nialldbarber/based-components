@@ -10,10 +10,11 @@ import React, {
 } from 'react';
 import {LoadingSpinner} from '../LoadingSpinner';
 import {BasedButton} from './styles';
-import {SHAPE} from './constants';
+import {SHAPE, KIND} from './constants';
 import {white} from '../constants/colors';
 
 export type Shape = keyof typeof SHAPE;
+export type Kind = keyof typeof KIND;
 
 export type ReactButtonProps = DetailedHTMLProps<
   ButtonHTMLAttributes<HTMLButtonElement>,
@@ -25,6 +26,7 @@ export interface ButtonPropsT
     ComponentPropsWithoutRef<'button'> {
   text?: string;
   className?: string;
+  kind?: Kind;
   children?: ReactNode;
   customStyles?: CSSProperties;
   shape?: Shape;
@@ -44,9 +46,10 @@ const Button = forwardRef<HTMLButtonElement, ButtonPropsT>(
       text,
       type = 'button',
       className,
+      kind = KIND.primary,
       children,
       customStyles,
-      shape = 'default',
+      shape = SHAPE.default,
       isLoading = false,
       loadingColor = white,
       loadingSize = 30,
@@ -65,6 +68,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonPropsT>(
         style={customStyles}
         className={[className, shape].join(' ')}
         onClick={onClick}
+        $kind={kind}
         $isLoading={isLoading}
         $isActive={isActive}
         $disabled={disabled}

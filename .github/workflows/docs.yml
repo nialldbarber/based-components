@@ -1,9 +1,5 @@
 name: Docs
-on:
-  push:
-    branches:
-      - main
-    paths: ["storybook/stories/**", "src/**"]
+on: [push]
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest

@@ -77,7 +77,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonPropsT>(
       >
         {iconPre && iconPre}
         {text && <span>{text}</span>}
-        {children || ''}
+        {children || ' '}
         {isLoading && <LoadingSpinner {...{loadingColor, loadingSize}} />}
         {iconEnd && iconEnd}
       </BasedButton>

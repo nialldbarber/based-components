@@ -1,6 +1,6 @@
 import React from 'react';
 import {ComponentStory, ComponentMeta} from '@storybook/react';
-import Button from '../Button/button';
+import Button from '../../src/Button/button';
 
 // text?: string;
 // className?: string;

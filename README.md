@@ -110,6 +110,11 @@ function App() {
   - [ ] option to add a href
   - [ ] option to add a tooltip ala <Button tooltipPosition="right" tooltipAlignment="end" iconDescription="Tooltip text" />
 
+- [x] remove storybook from bundle
+- [ ] remove storybook & example from npm
+- [ ] publish to github pages
+- [ ] pipeline that shiiii
+
 ## License
 
 MIT © [nialldbarber](https://github.com/nialldbarber)

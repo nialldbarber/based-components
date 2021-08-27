@@ -1,1 +1,5 @@
-example
+.storybook
+.github/
+
+example/
+storybook/

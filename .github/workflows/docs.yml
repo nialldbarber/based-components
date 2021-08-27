@@ -1,6 +1,10 @@
 name: Docs
 
-on: [push]
+on:
+  push:
+    branches:
+      - main
+    paths: ["storybook/stories/**", "src/**"]
 
 jobs:
   build-and-deploy:

@@ -66,7 +66,7 @@ export const BasedButton = styled.button<ButtonStylesT>`
   text-decoration: none;
   appearance: none;
   cursor: ${({disabled}) => (disabled ? 'default' : 'pointer')};
-  transition: opacity 0.125s ease;
+  transition: 0.125s ease;
 
   ${({kind}) => getKindStyles(kind as KindT)}
   ${({kind}) => getActiveStyles(kind as KindT)}

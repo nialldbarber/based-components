@@ -52,4 +52,5 @@ export const Shape = Template.bind({});
 Shape.args = {
   text: 'Danger',
   kind: 'danger',
+  shape: 'pill',
 };

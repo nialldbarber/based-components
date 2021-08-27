@@ -16,7 +16,7 @@ export const Wrapper = styled.div<CircleT>`
   align-items: center;
   width: ${({size, loadingSize}) => `${loadingSize ? loadingSize : size}px`};
   height: ${({size, loadingSize}) => `${loadingSize ? loadingSize : size}px`};
-  border: ${({size}) => `${size && size / 10}px`} solid
+  border: ${({size}) => `${size && size / 15}px`} solid
     ${({loadingColor}) => loadingColor};
   border-radius: 50%;
   border-right-color: transparent;

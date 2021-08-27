@@ -2,7 +2,6 @@ export const SHAPE: Record<string, string> = {
   default: 'default',
   pill: 'pill',
   round: 'round',
-  circle: 'circle',
   square: 'square',
 };
 

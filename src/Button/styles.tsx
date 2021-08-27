@@ -11,17 +11,17 @@ interface BackgroundT extends ButtonPropsT {
 }
 
 export interface ButtonStylesT extends BackgroundT {
-  $kind?: Kind;
-  $isLoading?: boolean;
-  $isActive?: boolean;
-  $disabled?: boolean;
-  $iconPre?: ReactNode;
-  $iconEnd?: ReactNode;
+  kind?: Kind;
+  isLoading?: boolean;
+  isActive?: boolean;
+  disabled?: boolean;
+  iconPre?: ReactNode;
+  iconEnd?: ReactNode;
   style?: CSSProperties;
 }
 
-const getKindStyles = ($kind: string) => {
-  const {main, counter, hovered, hoveredColor, outline} = KIND_COLOURS[$kind];
+const getKindStyles = (kind: string) => {
+  const {main, counter, hovered, hoveredColor, outline} = KIND_COLOURS[kind];
   return css`
     background: ${main};
     color: ${counter};
@@ -40,8 +40,8 @@ const getKindStyles = ($kind: string) => {
   `;
 };
 
-const getActiveStyles = ($kind: string) => {
-  const {main, counter, outline} = KIND_COLOURS[$kind];
+const getActiveStyles = (kind: string) => {
+  const {main, counter, outline} = KIND_COLOURS[kind];
   return css`
     &:focus {
       border-color: ${outline || main};
@@ -54,20 +54,22 @@ const getActiveStyles = ($kind: string) => {
 
 export const BasedButton = styled.button<ButtonStylesT>`
   display: inline-flex;
-  flex-direction: ${({$isLoading}) => ($isLoading ? 'row' : 'column')};
+  flex-direction: ${({isLoading}) => (isLoading ? 'row' : 'column')};
   align-items: center;
   justify-content: center;
   padding: 0.5rem 1rem;
+  min-width: 80px;
+  min-height: 35px;
   border-width: 0;
   border-style: none;
   outline: none;
   text-decoration: none;
   appearance: none;
-  cursor: ${({$disabled}) => ($disabled ? 'default' : 'pointer')};
+  cursor: ${({disabled}) => (disabled ? 'default' : 'pointer')};
   transition: opacity 0.125s ease;
 
-  ${({$kind}) => getKindStyles($kind as KindT)}
-  ${({$kind}) => getActiveStyles($kind as KindT)}
+  ${({kind}) => getKindStyles(kind as KindT)}
+  ${({kind}) => getActiveStyles(kind as KindT)}
 
   &.default {
     border-radius: 0;
@@ -79,9 +81,6 @@ export const BasedButton = styled.button<ButtonStylesT>`
     border-radius: 50%;
     padding-left: 14px;
     padding-right: 14px;
-  }
-  &.circle {
-    border-radius: 50%;
   }
 
   p {

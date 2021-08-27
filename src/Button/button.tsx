@@ -1,4 +1,5 @@
 import React, {
+  Fragment,
   forwardRef,
   ReactNode,
   DetailedHTMLProps,
@@ -68,18 +69,22 @@ const Button = forwardRef<HTMLButtonElement, ButtonPropsT>(
         style={customStyles}
         className={[className, shape].join(' ')}
         onClick={onClick}
-        $kind={kind}
-        $isLoading={isLoading}
-        $isActive={isActive}
-        $disabled={disabled}
-        $iconPre={iconPre}
-        $iconEnd={iconEnd}
+        kind={kind}
+        isLoading={isLoading}
+        isActive={isActive}
+        disabled={disabled}
+        iconPre={iconPre}
+        iconEnd={iconEnd}
       >
-        {iconPre && iconPre}
-        {text && <span>{text}</span>}
-        {children || ' '}
-        {isLoading && <LoadingSpinner {...{loadingColor, loadingSize}} />}
-        {iconEnd && iconEnd}
+        {isLoading ? (
+          <LoadingSpinner {...{loadingColor, loadingSize}} />
+        ) : (
+          <Fragment>
+            {iconPre}
+            {<span>{text}</span> || {children}}
+            {iconEnd}
+          </Fragment>
+        )}
       </BasedButton>
     );
   }

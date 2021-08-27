@@ -14,9 +14,7 @@ function LoadingSpinner({
   loadingColor = '#fff',
   loadingSize = 30,
 }: CircleT) {
-  return loading ? (
-    <Wrapper {...{size, loading, loadingColor, loadingSize}} />
-  ) : null;
+  return loading ? <Wrapper {...{size, loadingColor, loadingSize}} /> : null;
 }
 
 export default LoadingSpinner;

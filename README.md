@@ -101,7 +101,14 @@ function App() {
 
 - [ ] Add styled-components for basic styling & overrides
 - [ ] `<Button />`
-  - [ ] Get forwardRef working with typescript
+  - [ ] add colours <Button kind="primary" /> etc
+  - [ ] add button sizes
+  - [ ] option for a skeleton loader
+  - [ ] make active & focus native
+  - [ ] single icon option
+  - [ ] better names for pre/end icons
+  - [ ] option to add a href
+  - [ ] option to add a tooltip ala <Button tooltipPosition="right" tooltipAlignment="end" iconDescription="Tooltip text" />
 
 ## License
 

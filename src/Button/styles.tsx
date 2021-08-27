@@ -20,7 +20,6 @@ export interface ButtonStylesT extends BackgroundT {
 
 const getBackgroundColour = ({style}: ButtonStylesT) => {
   const bg: any = style?.backgroundColor || style?.background || white;
-
   return css`
     background-color: ${bg};
     &:hover {
@@ -34,7 +33,6 @@ const getBackgroundColour = ({style}: ButtonStylesT) => {
 
 const getActiveStyles = ({style}: ButtonStylesT) => {
   const bg = style?.backgroundColor || style?.background || white;
-
   return css`
     box-shadow: 0px 0 0 3px ${rgba(bg, 1)};
     outline: 1px solid ${white};

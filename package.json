@@ -22,7 +22,8 @@
     "test:watch": "react-scripts test --env=jsdom",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -o docs",
-    "deploy": "gh-pages -d docs"
+    "deploy": "gh-pages -d docs",
+    "deploy-sb": "npm run build-storybook && npm run deploy"
   },
   "peerDependencies": {
     "react": "^17.0.0"

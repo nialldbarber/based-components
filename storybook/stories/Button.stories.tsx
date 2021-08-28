@@ -1,56 +1,61 @@
 import React from 'react';
-import {ComponentStory, ComponentMeta} from '@storybook/react';
 import Button from '../../src/Button/button';
-import {KIND, SHAPE} from '../../src/Button/constants';
 
-// text,
-// type = 'button',
-// className,
-// kind = KIND.primary,
-// children,
-// customStyles,
-// shape = SHAPE.default,
-// isLoading = false,
-// loadingColor = white,
-// loadingSize = 30,
+export default {
+  title: 'Button',
+  decorators: [(Story: any) => <Story />],
+};
+
+export const text = () => (
+  <>
+    <Button text="Some text" kind="primary" />
+    <Button text="Different text" kind="danger" />
+  </>
+);
+
+export const kind = () => (
+  <>
+    <Button text="Primary" kind="primary" />
+    <Button text="Secondary" kind="secondary" />
+    <Button text="Tertiary" kind="tertiary" />
+    <Button text="Danger" kind="danger" />
+    <Button text="Ghost" kind="ghost" />
+  </>
+);
+
+export const shape = () => (
+  <>
+    <Button text="Default" shape="default" />
+    <Button text="Pill" shape="pill" />
+    <Button text="Round" shape="round" />
+    <Button text="Square" shape="square" />
+  </>
+);
+
+export const customStyles = () => (
+  <>
+    <Button
+      text="Custom"
+      customStyles={{
+        background: 'pink',
+        height: 70,
+        width: 200,
+        borderRadius: 5,
+      }}
+    />
+  </>
+);
+
+export const isLoading = () => (
+  <>
+    <Button isLoading />
+    <Button isLoading loadingSize={10} />
+    <Button isLoading loadingColor="pink" />
+  </>
+);
+
 // isActive = false,
 // disabled = false,
 // iconPre,
 // iconEnd,
 // onClick,
-
-export default {
-  title: 'Components/Button',
-  component: Button,
-  argTypes: {
-    kind: {
-      options: [...Object.values(KIND)],
-      control: {type: 'radio'},
-    },
-    shape: {
-      options: [...Object.values(SHAPE)],
-      control: {type: 'radio'},
-    },
-  },
-} as ComponentMeta<typeof Button>;
-
-const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
-
-export const Text = Template.bind({});
-Text.args = {
-  text: 'Test text',
-  kind: 'primary',
-};
-
-export const Kind = Template.bind({});
-Kind.args = {
-  text: 'Primary',
-  kind: 'primary',
-};
-
-export const Shape = Template.bind({});
-Shape.args = {
-  text: 'Danger',
-  kind: 'danger',
-  shape: 'pill',
-};

@@ -59,6 +59,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonPropsT>(
       iconPre,
       iconEnd,
       onClick,
+      ...rest
     },
     ref
   ): ReactElement => {
@@ -75,14 +76,16 @@ const Button = forwardRef<HTMLButtonElement, ButtonPropsT>(
         disabled={disabled}
         iconPre={iconPre}
         iconEnd={iconEnd}
+        {...rest}
       >
         {isLoading ? (
           <LoadingSpinner {...{loadingColor, loadingSize}} />
         ) : (
           <Fragment>
-            {iconPre}
-            {<span>{text}</span> || {children}}
-            {iconEnd}
+            {iconPre || null}
+            {<span>{text}</span> || null}
+            {children || null}
+            {iconEnd || null}
           </Fragment>
         )}
       </BasedButton>

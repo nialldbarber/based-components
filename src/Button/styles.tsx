@@ -18,6 +18,8 @@ export interface ButtonStylesT extends BackgroundT {
   iconPre?: ReactNode;
   iconEnd?: ReactNode;
   style?: CSSProperties;
+  rest?: any;
+  ref?: any;
 }
 
 const getKindStyles = (kind: string) => {

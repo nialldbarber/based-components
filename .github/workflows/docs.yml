@@ -1,4 +1,4 @@
-name: ndb-site
+name: docs
 
 on:
   push:

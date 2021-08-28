@@ -113,7 +113,7 @@ function App() {
 - [x] remove storybook from bundle
 - [ ] remove storybook & example from npm
 - [ ] publish to github pages
-- [ ] pipeline that shiiii
+- [ ] think about base styles: css vars?
 
 ## License
 

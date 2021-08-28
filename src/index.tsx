@@ -4,5 +4,6 @@ import {Card} from './card';
 import {H} from './header';
 import {Divider} from './divider';
 import {ProgressBar} from './ProgressBar';
+import BasedProvider from './system/based-provider';
 
-export {Button, Input, Card, H, Divider, ProgressBar};
+export {BasedProvider, Button, Input, Card, H, Divider, ProgressBar};

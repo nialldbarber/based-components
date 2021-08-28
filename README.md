@@ -28,7 +28,7 @@ import {Form, Input, Button, useForm} from 'based-components';
 
 interface Values {
   text: string;
-  type: string;
+  type?: string;
 }
 
 function App() {
@@ -104,16 +104,13 @@ function App() {
   - [ ] add colours <Button kind="primary" /> etc
   - [ ] add button sizes
   - [ ] option for a skeleton loader
-  - [ ] make active & focus native
-  - [ ] single icon option
   - [ ] better names for pre/end icons
   - [ ] option to add a href
   - [ ] option to add a tooltip ala <Button tooltipPosition="right" tooltipAlignment="end" iconDescription="Tooltip text" />
 
-- [x] remove storybook from bundle
 - [ ] remove storybook & example from npm
 - [ ] publish to github pages
-- [ ] think about base styles: css vars?
+- [ ] think about base/global styles: css vars? how do others do it?
 
 ## License
 

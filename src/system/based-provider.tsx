@@ -10,10 +10,11 @@ export const GlobalStyles = createGlobalStyle`
 
   :root {
     --red: red;
+    --font-family: 'Inter', sans-serif;
   }
 
   body {
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-family);
   }
 `;
 

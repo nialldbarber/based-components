@@ -11,6 +11,7 @@ import React, {
 } from 'react';
 import {LoadingSpinner} from '../LoadingSpinner';
 import {BasedButton} from './styles';
+import {classNames} from '../utils/classNames';
 import {SHAPE, KIND} from './constants';
 import {white} from '../constants/colors';
 
@@ -68,7 +69,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonPropsT>(
         ref={ref}
         type={type}
         style={customStyles}
-        className={[className, shape].join(' ')}
+        className={classNames(className, shape)}
         onClick={onClick}
         kind={kind}
         isLoading={isLoading}

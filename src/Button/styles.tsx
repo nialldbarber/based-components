@@ -55,6 +55,7 @@ const getActiveStyles = (kind: string) => {
 };
 
 export const BasedButton = styled.button<ButtonStylesT>`
+  font-family: 'Inter', sans-serif;
   display: inline-flex;
   flex-direction: ${({isLoading}) => (isLoading ? 'row' : 'column')};
   align-items: center;

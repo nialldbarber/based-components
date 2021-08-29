@@ -73,8 +73,9 @@ function App() {
   - [ ] option to add a tooltip ala <Button tooltipPosition="right" tooltipAlignment="end" iconDescription="Tooltip text" />
 
 - [ ] remove storybook & example from npm
-- [ ] publish to github pages
 - [ ] think about base/global styles: css vars? how do others do it?
+- [ ] snapshot storybook testing?
+- [ ] jest/react-testing-library testing
 
 ## License
 

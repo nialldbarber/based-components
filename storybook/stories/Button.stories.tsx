@@ -17,9 +17,7 @@ export const kind = () => (
   <>
     <Button text="Primary" kind="primary" />
     <Button text="Secondary" kind="secondary" />
-    <Button text="Tertiary" kind="tertiary" />
     <Button text="Danger" kind="danger" />
-    <Button text="Ghost" kind="ghost" />
   </>
 );
 
@@ -27,8 +25,6 @@ export const shape = () => (
   <>
     <Button text="Default" shape="default" />
     <Button text="Pill" shape="pill" />
-    <Button text="Round" shape="round" />
-    <Button text="Square" shape="square" />
   </>
 );
 

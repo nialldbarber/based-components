@@ -1,7 +1,7 @@
 import React, {forwardRef, ReactNode, ReactElement, CSSProperties} from 'react';
 import {BasedHeader} from './styles';
 
-const THEMES = {
+const THEMES: Record<string, string> = {
   light: 'light',
   dark: 'dark',
 };
@@ -14,7 +14,7 @@ const HEADER_LIST = numberTuple(1, 2, 3, 4, 5);
 
 export type HeaderPropsT = {
   text?: string;
-  level: typeof HEADER_LIST[number];
+  level?: typeof HEADER_LIST[number];
   strong?: boolean;
   line?: boolean;
   theme?: ThemesT;

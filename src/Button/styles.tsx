@@ -60,6 +60,7 @@ export const BasedButton = styled.button<ButtonStylesT>`
   padding: 0.5rem 1rem;
   min-width: 80px;
   min-height: 35px;
+  height: 36px;
   border-width: 0;
   border-style: none;
   outline: none;

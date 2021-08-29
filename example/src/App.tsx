@@ -1,5 +1,5 @@
 import React from 'react';
-import {BasedProvider, Button} from 'based-components';
+import {BasedProvider, Button, H} from 'based-components';
 import {useState} from 'react';
 
 export default function App() {
@@ -22,19 +22,12 @@ export default function App() {
           loadingSize={10}
           onClick={() => setActive(!active)}
         />
-        <Button
-          text="Secondary"
-          kind="secondary"
-          isLoading={active}
-          loadingSize={10}
-          onClick={() => setActive(!active)}
-        />
-        <Button
-          text="Danger"
-          kind="danger"
-          isLoading={active}
-          loadingSize={10}
-          onClick={() => setActive(!active)}
+        <H text="test" />
+        <H
+          text="this is a really really really long sentence"
+          level={1}
+          isTruncated={true}
+          customStyles={{fontSize: 100, width: 400}}
         />
       </div>
     </BasedProvider>

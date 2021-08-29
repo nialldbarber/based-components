@@ -6,12 +6,12 @@
 import {BasedProvider, Button} from 'based-components';
 
 /**
- * Place a `ThemeProvider` at the root of your React application
+ * Place a `BasedProvider` at the root of your React application
  */
-<ThemeProvider>
+<BasedProvider>
   <>
     <Button onClick={() => alert('clicked')}>Default</Button>
     <Button text="Primary Button" kind="primary" />
   </>
-</ThemeProvider>;
+</BasedProvider>;
 ```

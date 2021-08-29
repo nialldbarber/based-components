@@ -54,7 +54,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonPropsT>(
       shape = SHAPE.default,
       isLoading = false,
       loadingColor = white,
-      loadingSize = 30,
+      loadingSize = 10,
       isActive = false,
       disabled = false,
       iconPre,
@@ -80,7 +80,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonPropsT>(
         {...rest}
       >
         {isLoading ? (
-          <LoadingSpinner {...{loadingColor, loadingSize}} />
+          <LoadingSpinner {...{loadingColor, loadingSize, kind}} />
         ) : (
           <Fragment>
             {iconPre || null}

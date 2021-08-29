@@ -7,7 +7,15 @@ export default function App() {
 
   return (
     <BasedProvider>
-      <div className="App">
+      <div
+        className="App"
+        style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          width: 400,
+          margin: 70,
+        }}
+      >
         <Button
           text="Submit"
           isLoading={active}

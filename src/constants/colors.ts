@@ -1,10 +1,10 @@
 export const white = '#fff';
 export const hoveredWhite = '#e5e5e5';
 export const dividerLine = 'rgba(0, 0, 0, 0.06)';
-export const primary = '#0f62fe';
-export const primaryHovered = '#0353e9';
-export const danger = '#da1e28';
-export const dangerHovered = '#b81921';
+export const primary = '#3B82F6';
+export const primaryHovered = '#2563EB';
+export const danger = '#EF4444';
+export const dangerHovered = '#DC2626';
 
 // animations
 export const anim = '0, 0, 0.38, 0.9';
@@ -16,9 +16,11 @@ export const KIND_COLOURS = {
     hovered: primaryHovered,
   },
   secondary: {
-    main: '#393939',
-    counter: white,
-    hovered: '#4c4c4c',
+    main: white,
+    counter: primary,
+    hovered: primary,
+    hoveredColor: white,
+    outline: primary,
   },
   tertiary: {
     main: white,

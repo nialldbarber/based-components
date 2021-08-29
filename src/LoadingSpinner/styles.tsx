@@ -1,5 +1,6 @@
 import styled, {keyframes} from 'styled-components';
 import {CircleT} from './loading-spinner';
+import {b} from '../system/based-provider';
 
 const rotateSpinner = keyframes`
   0% {
@@ -17,7 +18,7 @@ export const Wrapper = styled.div<CircleT>`
   width: ${({size, loadingSize}) => `${loadingSize ? loadingSize : size}px`};
   height: ${({size, loadingSize}) => `${loadingSize ? loadingSize : size}px`};
   border: ${({size}) => `${size && size / 15}px`} solid
-    ${({loadingColor}) => loadingColor};
+    ${({loadingColor, kind}) => `var(--${b}-${kind}-loader)` || loadingColor};
   border-radius: 50%;
   border-right-color: transparent;
   animation: ${rotateSpinner} 0.75s linear infinite;

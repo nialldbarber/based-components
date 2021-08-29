@@ -1,4 +1,4 @@
-import React, {ReactNode, ReactElement, CSSProperties} from 'react';
+import React, {forwardRef, ReactNode, ReactElement, CSSProperties} from 'react';
 import {BasedHeader} from './styles';
 
 const THEMES = {
@@ -23,46 +23,46 @@ export type HeaderPropsT = {
   isTruncated?: boolean;
   iconPre?: ReactNode;
   iconEnd?: ReactNode;
-  // todo: add ref here
 };
 
-function Header({
-  text,
-  level = 1,
-  strong = false,
-  line,
-  theme = 'dark',
-  className,
-  customStyles,
-  isTruncated,
-  iconPre,
-  iconEnd,
-  ...rest
-}: HeaderPropsT | any): ReactElement {
-  const H = `h${level}` as keyof JSX.IntrinsicElements;
+const Header = forwardRef<HTMLHeadingElement, HeaderPropsT>(
+  (
+    {
+      text,
+      level = 1,
+      strong = false,
+      line,
+      theme = 'dark',
+      className,
+      customStyles,
+      isTruncated,
+      iconPre,
+      iconEnd,
+      ...rest
+    },
+    ref
+  ): ReactElement => {
+    const H = `h${level}` as keyof JSX.IntrinsicElements;
 
-  const header = (
-    <H
-      {...{className, ...rest}}
-      style={{
-        ...customStyles,
-        fontWeight: strong ? 'bold' : '',
-        textDecoration: line ? 'underline' : 'none',
-      }}
-    >
-      {text}
-    </H>
-  );
+    const header = (
+      <H {...{className}} style={customStyles} {...rest}>
+        {text}
+      </H>
+    );
 
-  return iconPre || iconEnd ? (
-    <BasedHeader {...{theme, isTruncated, iconPre, iconEnd}}>
-      {iconPre && iconPre}
-      {header}
-      {iconEnd && iconEnd}
-    </BasedHeader>
-  ) : (
-    <BasedHeader {...{theme, isTruncated}}>{header}</BasedHeader>
-  );
-}
+    return iconPre || iconEnd ? (
+      <BasedHeader
+        ref={ref}
+        {...{theme, strong, isTruncated, iconPre, iconEnd}}
+      >
+        {iconPre && iconPre}
+        {header}
+        {iconEnd && iconEnd}
+      </BasedHeader>
+    ) : (
+      <BasedHeader {...{theme, strong, isTruncated}}>{header}</BasedHeader>
+    );
+  }
+);
 
 export default Header;

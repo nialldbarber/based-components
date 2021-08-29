@@ -13,8 +13,10 @@ export const GlobalStyles = createGlobalStyle`
   :root {
     // colors
     --white: #FFFFFF;
-    --blue: #3B82F6;
-    --red: #EF4444;
+    --blue: #2563EB;
+    --dark-blue: #1D4ED8;
+    --red: #DC2626;
+    --dark-red: #B91C1C;
 
     --${b}-white: var(--white);
     --${b}-white-hovered: #E5E5E5;
@@ -24,7 +26,7 @@ export const GlobalStyles = createGlobalStyle`
     // primary
     --${b}-primary: var(--blue);
     --${b}-primary-color: var(--white);
-    --${b}-primary-hovered: #2563EB;
+    --${b}-primary-hovered: var(--dark-blue);
     --${b}-primary-color-hovered: var(--white);
     --${b}-primary-outline: var(--blue);
     --${b}-primary-loader: var(--white);
@@ -38,7 +40,7 @@ export const GlobalStyles = createGlobalStyle`
     // danger
     --${b}-danger: var(--red);
     --${b}-danger-color: var(--white);
-    --${b}-danger-hovered: #DC2626;
+    --${b}-danger-hovered: var(--dark-red);
     --${b}-danger-color-hovered: var(--white);
     --${b}-danger-outline: var(--red);
     --${b}-danger-loader: var(--white);

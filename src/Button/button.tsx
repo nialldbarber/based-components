@@ -77,6 +77,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonPropsT>(
         disabled={disabled}
         iconPre={iconPre}
         iconEnd={iconEnd}
+        aria-label={isLoading ? 'Loading' : null}
         {...rest}
       >
         {isLoading ? (

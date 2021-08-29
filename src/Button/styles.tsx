@@ -1,8 +1,9 @@
 import {ReactNode, CSSProperties} from 'react';
 import styled, {css} from 'styled-components';
 import {ButtonPropsT, Kind} from './button';
-import {KIND_COLOURS, anim} from '../constants/colors';
+import {getBaseDefaults} from '../system/base-mixins';
 import {b} from '../system/based-provider';
+import {KIND_COLOURS} from '../constants/colors';
 
 export type KindT = keyof typeof KIND_COLOURS;
 
@@ -19,13 +20,14 @@ export interface ButtonStylesT extends BackgroundT {
   iconPre?: ReactNode;
   iconEnd?: ReactNode;
   style?: CSSProperties;
+  'aria-label'?: any;
   rest?: any;
   ref?: any;
 }
 
 const getKindStyles = (kind: string) => {
   return css`
-    background: var(--${b}-${kind});
+    background-color: var(--${b}-${kind});
     color: var(--${b}-${kind}-color);
     border: 1px solid var(--${b}-${kind}-outline);
     transition: background 0.2s cubic-bezier(var(--${b}-anim)),
@@ -48,7 +50,7 @@ const getActiveStyles = css`
 `;
 
 export const BasedButton = styled.button<ButtonStylesT>`
-  font-family: 'Inter', sans-serif;
+  ${getBaseDefaults};
   position: relative;
   display: inline-flex;
   flex-direction: ${({isLoading}) => (isLoading ? 'row' : 'column')};
@@ -66,6 +68,7 @@ export const BasedButton = styled.button<ButtonStylesT>`
   white-space: nowrap;
   cursor: ${({disabled}) => (disabled ? 'default' : 'pointer')};
   transition: 0.125s ease;
+  opacity: ${({disabled}) => (disabled ? 0.6 : 1)};
 
   ${({kind}) => getKindStyles(kind as KindT)}
   ${getActiveStyles}

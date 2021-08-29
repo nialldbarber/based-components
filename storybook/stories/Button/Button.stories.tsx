@@ -28,6 +28,12 @@ export const shape = () => (
   </>
 );
 
+export const disabled = () => (
+  <>
+    <Button text="Disabled" disabled />
+  </>
+);
+
 export const customStyles = () => (
   <>
     <Button
@@ -50,8 +56,6 @@ export const isLoading = () => (
   </>
 );
 
-// isActive = false,
-// disabled = false,
 // iconPre,
 // iconEnd,
 // onClick,

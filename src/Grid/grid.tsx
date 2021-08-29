@@ -19,6 +19,18 @@ export type GridPropsT = {
   customStyles?: CSSProperties;
 };
 
+export type GridItemPropsT = {
+  colSpan?: string;
+  colStart?: string;
+  colEnd?: string;
+  rowEnd?: string;
+  rowSpan?: string;
+  rowStart?: string;
+  className?: string;
+  children?: ReactNode;
+  customStyles?: CSSProperties;
+};
+
 export const Grid = forwardRef<HTMLDivElement, GridPropsT>(
   (
     {
@@ -69,10 +81,38 @@ export const Grid = forwardRef<HTMLDivElement, GridPropsT>(
   }
 );
 
-export const GridItem = forwardRef<HTMLDivElement, GridPropsT>(
-  ({className, children, customStyles, ...rest}, ref): ReactElement => {
+export const GridItem = forwardRef<HTMLDivElement, GridItemPropsT>(
+  (
+    {
+      colSpan,
+      colStart,
+      colEnd,
+      rowEnd,
+      rowSpan,
+      rowStart,
+      className,
+      children,
+      customStyles,
+      ...rest
+    },
+    ref
+  ): ReactElement => {
+    const styles = {
+      gridColumn: colSpan,
+      gridRow: rowSpan,
+      gridColumnStart: colStart,
+      gridColumnEnd: colEnd,
+      gridRowStart: rowStart,
+      gridRowEnd: rowEnd,
+    };
+
     return (
-      <BasedGridItem ref={ref} {...{className}} style={customStyles} {...rest}>
+      <BasedGridItem
+        ref={ref}
+        style={{...styles, ...customStyles}}
+        {...{className}}
+        {...rest}
+      >
         {children}
       </BasedGridItem>
     );

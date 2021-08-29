@@ -2,13 +2,17 @@
 
 ## Install
 
-```bash
+```zsh
 # using npm
 npm install based-components
 
 # using yarn
 yarn add based-components
 ```
+
+# Documentation
+
+#### Check out the docs ➡️ [here](https://nialldbarber.github.io/based-components)
 
 ## 🚧 WIP! 🚧
 
@@ -55,10 +59,6 @@ function App() {
   );
 }
 ```
-
-# Documentation
-
-Check out the documentation [here](https://nialldbarber.github.io/based-components)
 
 ## Todos
 

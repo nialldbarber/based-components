@@ -1,8 +1,8 @@
 import React from 'react';
-import Button from '../../src/Button/button';
+import Button from '../../../src/Button/button';
 
 export default {
-  title: 'Button',
+  title: 'Components/Button',
   decorators: [(Story: any) => <Story />],
 };
 

@@ -28,10 +28,10 @@ const getKindStyles = (kind: string) => {
     background: var(--${b}-${kind});
     color: var(--${b}-${kind}-color);
     border: 1px solid var(--${b}-${kind}-outline);
-    transition: background 70ms cubic-bezier(var(--${b}-anim)),
-      box-shadow 70ms cubic-bezier(var(--${b}-anim)),
-      border-color 70ms cubic-bezier(var(--${b}-anim)),
-      outline 70ms cubic-bezier(var(--${b}-anim));
+    transition: background 0.2s cubic-bezier(var(--${b}-anim)),
+      box-shadow 0.2s cubic-bezier(var(--${b}-anim)),
+      border-color 0.2s cubic-bezier(var(--${b}-anim)),
+      outline 0.2s cubic-bezier(var(--${b}-anim));
 
     &:hover {
       background-color: var(--${b}-${kind}-hovered);

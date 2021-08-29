@@ -16,7 +16,7 @@ yarn add based-components
 
 ## Documentation
 
-#### Check out the docs ➡️ [here](https://nialldbarber.github.io/based-components){:target="\_blank"}
+#### Check out the docs ➡️ [here](https://nialldbarber.github.io/based-components)
 
 ## Usage
 

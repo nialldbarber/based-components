@@ -6,6 +6,7 @@ import {isArrayType} from './isType';
  * @returns string
  */
 export function classNames(...classes: unknown[]): string {
+  // if any element is a number, convert it to a string
   if (isArrayType(classes, 'number')) {
     classes = classes.map((n: number) => n.toString());
   }

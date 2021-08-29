@@ -15,9 +15,26 @@ const getIconEndStyles = css`
   }
 `;
 
+const getTruncatedStyles = css`
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+`;
+
 export const BasedHeader = styled.div<StyledHeaderT>`
   display: flex;
   align-items: center;
   ${({iconPre}) => iconPre && getIconPreStyles};
   ${({iconEnd}) => iconEnd && getIconEndStyles};
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Inter', sans-serif;
+    color: ${({theme}) => (theme === 'dark' ? 'var(--black)' : 'var(--white)')};
+    ${({isTruncated}) => isTruncated && getTruncatedStyles};
+  }
 `;

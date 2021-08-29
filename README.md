@@ -4,7 +4,7 @@
 
 This is work in progress and nowhere near ready to use. Feel free to install it but be prepared for a few errors! 😉
 
-## Install
+## Installation
 
 ```zsh
 # using npm
@@ -14,7 +14,7 @@ npm install based-components
 yarn add based-components
 ```
 
-# Documentation
+## Documentation
 
 #### Check out the docs ➡️ [here](https://nialldbarber.github.io/based-components)
 

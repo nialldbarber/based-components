@@ -15,4 +15,8 @@ describe('<Button />', () => {
   });
 });
 
-// check disabled
+test('Should be disabled', () => {
+  const {getByRole} = render(<Button disabled>Disabled button</Button>);
+  const button = getByRole('button');
+  expect(button).toBeDisabled();
+});

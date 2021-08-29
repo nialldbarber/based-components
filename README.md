@@ -77,6 +77,13 @@ function App() {
 - [ ] snapshot storybook testing?
 - [ ] jest/react-testing-library testing
 
+## Internal (process)
+
+- component
+- styles
+- storybook
+- tests
+
 ## License
 
 MIT © [nialldbarber](https://github.com/nialldbarber)

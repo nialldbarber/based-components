@@ -1,5 +1,5 @@
 import React from 'react';
-import {BasedProvider, Button, H} from 'based-components';
+import {BasedProvider, Button, H, Grid} from 'based-components';
 import {useState} from 'react';
 
 export default function App() {
@@ -7,15 +7,7 @@ export default function App() {
 
   return (
     <BasedProvider>
-      <div
-        className="App"
-        style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          width: 400,
-          margin: 70,
-        }}
-      >
+      <Grid templateColumns="repeat(3, 1fr)">
         <Button
           text="Submit"
           isLoading={active}
@@ -29,7 +21,7 @@ export default function App() {
           isTruncated={true}
           customStyles={{fontSize: 100, width: 400}}
         />
-      </div>
+      </Grid>
     </BasedProvider>
   );
 }

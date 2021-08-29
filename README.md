@@ -1,5 +1,9 @@
 # Based Components
 
+## 🚧 WIP! 🚧
+
+This is work in progress and nowhere near ready to use. Feel free to install it but be prepared for a few errors! 😉
+
 ## Install
 
 ```zsh
@@ -13,10 +17,6 @@ yarn add based-components
 # Documentation
 
 #### Check out the docs ➡️ [here](https://nialldbarber.github.io/based-components)
-
-## 🚧 WIP! 🚧
-
-This is work in progress and nowhere near ready to use. Feel free to install it but be prepared for a few errors! 😉
 
 ## Usage
 

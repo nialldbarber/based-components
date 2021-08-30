@@ -20,10 +20,9 @@ export interface CheckboxPropsT {
 
 const Checkbox = forwardRef<HTMLInputElement, CheckboxPropsT>(
   (
-    {className, color, id, isChecked, isDisabled, onChange, ...rest},
+    {className, color, id = null, isChecked, isDisabled, onChange, ...rest},
     ref
   ): ReactElement => {
-    console.log(isChecked ? 'CHECKED' : 'DISABLED');
     let [customId, setCustomId] = useState('');
 
     useEffect(() => {
@@ -31,8 +30,7 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxPropsT>(
     }, []);
 
     return (
-      <Fragment>
-        <label htmlFor={id ? id : customId} />
+      <div>
         <BasedInput
           ref={ref}
           id={id ? id : customId}
@@ -42,7 +40,11 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxPropsT>(
           {...{color, className, isChecked, isDisabled, onChange}}
           {...rest}
         />
-      </Fragment>
+        <label htmlFor={id ? id : customId}>
+          <span />
+          Hello there
+        </label>
+      </div>
     );
   }
 );

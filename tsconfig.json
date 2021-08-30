@@ -2,7 +2,14 @@
   "compilerOptions": {
     "outDir": "dist",
     "module": "esnext",
-    "lib": ["dom", "esnext"],
+    "target": "es2019",
+    "lib": [
+      "dom",
+      "es2019",
+      "es2020.bigint",
+      "es2020.string",
+      "es2020.symbol.wellknown"
+    ],
     "moduleResolution": "node",
     "jsx": "react",
     "sourceMap": true,

@@ -68,7 +68,7 @@ export const BasedButton = styled.button<ButtonStylesT>`
   appearance: none;
   white-space: nowrap;
   cursor: ${({disabled}) => (disabled ? 'default' : 'pointer')};
-  transition: 0.125s ease;
+  transition: 0 125s ease;
   opacity: ${({disabled}) => (disabled ? 0.6 : 1)};
 
   ${({kind}) => getKindStyles(kind as KindT)}

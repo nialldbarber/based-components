@@ -1,3 +1,5 @@
+// TODO: tests!
+
 /**
  * Generate a random array based on a given callback
  * @param callback any

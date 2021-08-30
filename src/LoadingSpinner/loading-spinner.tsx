@@ -1,8 +1,6 @@
 import React from 'react';
 import {Wrapper} from './styles';
-import {KIND} from '../Button/constants';
-
-export type Kind = keyof typeof KIND;
+import {Kind} from '../Button/button';
 
 export type CircleT = {
   loading?: boolean;

@@ -1,10 +1,13 @@
 import React from 'react';
 import {BasedProvider, Button, H, Checkbox, Grid} from 'based-components';
 import {useState} from 'react';
+import './index.css';
 
 export default function App() {
   const [active, setActive] = useState<boolean>(false);
   const [checked, setChecked] = useState<boolean>(false);
+
+  const setUpChecked = () => setChecked(!checked);
 
   return (
     <BasedProvider>
@@ -23,6 +26,7 @@ export default function App() {
           customStyles={{fontSize: 100, width: 400}}
         />
         <Checkbox isChecked={checked} onChange={() => setChecked(!checked)} />
+        <Button text="press me" onClick={setUpChecked} />
       </Grid>
     </BasedProvider>
   );

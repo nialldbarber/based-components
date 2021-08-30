@@ -22,8 +22,9 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxPropsT>(
     {className, color, id = null, isChecked, isDisabled, onChange, ...rest},
     ref
   ): ReactElement => {
-    let [customId, setCustomId] = useState('');
+    let [customId, setCustomId] = useState<string>('');
 
+    // if no id is received, set a random one
     useEffect(() => {
       setCustomId(randomIdGenerator());
     }, []);

@@ -76,6 +76,9 @@ function App() {
 - [ ] think about base/global styles: css vars? how do others do it?
 - [ ] snapshot storybook testing?
 - [ ] jest/react-testing-library testing
+- [ ] check out hooks for [hooks](https://react-hook-form.com/)
+
+- [ ] make types more consistent
 
 ## Internal (process)
 

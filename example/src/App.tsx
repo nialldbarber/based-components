@@ -1,9 +1,10 @@
 import React from 'react';
-import {BasedProvider, Button, H, Grid} from 'based-components';
+import {BasedProvider, Button, H, Checkbox, Grid} from 'based-components';
 import {useState} from 'react';
 
 export default function App() {
-  const [active, setActive] = useState(false);
+  const [active, setActive] = useState<boolean>(false);
+  const [checked, setChecked] = useState<boolean>(false);
 
   return (
     <BasedProvider>
@@ -21,6 +22,7 @@ export default function App() {
           isTruncated={true}
           customStyles={{fontSize: 100, width: 400}}
         />
+        <Checkbox isChecked={checked} onChange={() => setChecked(!checked)} />
       </Grid>
     </BasedProvider>
   );

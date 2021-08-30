@@ -1,5 +1,6 @@
 import {Button} from './Button';
 import {Input} from './input';
+import {Checkbox} from './checkbox';
 import {Card} from './card';
 import {H} from './header';
 import {Divider} from './divider';
@@ -12,6 +13,7 @@ export {
   BasedProvider,
   Button,
   Input,
+  Checkbox,
   Card,
   H,
   Divider,

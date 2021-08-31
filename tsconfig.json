@@ -24,6 +24,11 @@
     "allowSyntheticDefaultImports": true,
     "types": ["node", "@types/testing-library__jest-dom"]
   },
-  "include": ["src/**/*.ts", "storybook/**/*.ts"],
+  "include": [
+    "src/**/*.ts",
+    "storybook/**/*.ts",
+    "src/types/**/*.d.ts",
+    "src/**/*.d.ts"
+  ],
   "exclude": ["node_modules", "dist", "example", "docs"]
 }

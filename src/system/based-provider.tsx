@@ -1,5 +1,7 @@
 import React, {Fragment, ReactChild} from 'react';
 import {createGlobalStyle} from 'styled-components';
+// @ts-ignore
+import InterLight from './assets/fonts/Inter-Light.ttf';
 
 type Props = {
   children?: ReactChild;
@@ -8,8 +10,6 @@ type Props = {
 export const b = 'based';
 
 export const GlobalStyles = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap');
-
   :root {
     // colors
     --white: #FFFFFF;
@@ -48,6 +48,7 @@ export const GlobalStyles = createGlobalStyle`
     // animations
     --${b}-divider-line: rgba(0, 0, 0, 0.06);
     --${b}-anim: 0, 0, 0.38, 0.9;
+    --${b}-checked-anim: cubic-bezier(0.4, 0, 0.23, 1);
   }
 `;
 

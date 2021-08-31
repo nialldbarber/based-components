@@ -25,7 +25,26 @@ export default function App() {
           isTruncated={true}
           customStyles={{fontSize: 100, width: 400}}
         />
-        <Checkbox isChecked={checked} onChange={() => setChecked(!checked)} />
+        <Checkbox
+          isChecked={checked}
+          size="xs"
+          onChange={() => setChecked(!checked)}
+        />
+        <Checkbox
+          isChecked={checked}
+          size="sm"
+          onChange={() => setChecked(!checked)}
+        />
+        <Checkbox
+          isChecked={checked}
+          size="md"
+          onChange={() => setChecked(!checked)}
+        />
+        <Checkbox
+          isChecked={checked}
+          size="lg"
+          onChange={() => setChecked(!checked)}
+        />
         <Button text="press me" onClick={setUpChecked} />
       </Grid>
     </BasedProvider>

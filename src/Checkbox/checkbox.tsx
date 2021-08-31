@@ -4,14 +4,26 @@ import React, {
   forwardRef,
   ReactElement,
   ChangeEvent,
+  Fragment,
 } from 'react';
 import {BasedInput} from './styles';
 import {randomIdGenerator} from '../utils/generateId';
 import {Kind} from '../Button/button';
 
+const CHECKBOX_SIZES: Record<string, string> = {
+  xs: 'xs',
+  sm: 'sm',
+  md: 'md',
+  lg: 'lg',
+};
+
+export type CheckboxSizesT = keyof typeof CHECKBOX_SIZES;
+
 export interface CheckboxPropsT {
   className?: string;
   color?: string;
+  label?: string;
+  size?: CheckboxSizesT;
   id?: string;
   kind?: Kind;
   isChecked?: boolean;
@@ -26,6 +38,8 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxPropsT>(
     {
       className,
       color,
+      label,
+      size = 'sm',
       id = null,
       kind = 'primary',
       isChecked,
@@ -45,13 +59,14 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxPropsT>(
     }, []);
 
     return (
-      <div>
+      <Fragment>
         <BasedInput
           ref={ref}
           id={id ? id : customId}
           type="checkbox"
           checked={isChecked}
           disabled={isDisabled}
+          $size={size}
           {...{
             color,
             className,
@@ -65,10 +80,9 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxPropsT>(
           {...rest}
         />
         <label htmlFor={id ? id : customId}>
-          <span />
-          Hello there
+          <span>{label || ''}</span>
         </label>
-      </div>
+      </Fragment>
     );
   }
 );

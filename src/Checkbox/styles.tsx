@@ -1,7 +1,11 @@
 import styled, {keyframes} from 'styled-components';
-import {CheckboxPropsT} from './checkbox';
+import {CheckboxPropsT, CheckboxSizesT} from './checkbox';
 import {getBaseDefaults} from '../system/base-mixins';
 import {b} from '../system/based-provider';
+
+interface CheckboxStylesT extends CheckboxPropsT {
+  $size: CheckboxSizesT;
+}
 
 const shrinkBounce = keyframes`
   0% {
@@ -20,24 +24,23 @@ const checkboxCheck = (checkColor: string) => keyframes`
     width: 0;
     height: 0;
     border-color: ${checkColor};
-    transform: translate3d(0,0,0) rotate(45deg);
+    transform: translate3d(0, 0, 0) rotate(45deg);
   }
   33% {
     width: .2rem;
     height: 0;
-    transform: translate3d(0,0,0) rotate(45deg);
+    transform: translate3d(0, 0, 0) rotate(45deg);
   }
   100% {
     width: .2rem;
     height: .5rem;
     border-color: ${checkColor};
-    transform: translate3d(0,-.5rem,0) rotate(45deg);
+    transform: translate3d(0, -.5rem, 0) rotate(45deg);
   }
 `;
 
-export const BasedInput = styled.input<CheckboxPropsT>`
+export const BasedInput = styled.input<CheckboxStylesT>`
   ${getBaseDefaults};
-  background: ${({isChecked}) => (isChecked ? 'red' : 'blue')};
   height: 0;
   width: 0;
 
@@ -47,8 +50,20 @@ export const BasedInput = styled.input<CheckboxPropsT>`
       display: flex;
       margin: 0.6rem 0;
       align-items: center;
-      color: #9e9e9e;
-      transition: color 0.25s cubic-bezier(0.4, 0, 0.23, 1);
+      color: var(--black);
+      transition: color 0.25s var(--${b}-checked-anim);
+      transform: scale(
+        ${({$size}) =>
+          $size === 'xs'
+            ? 0.8
+            : $size === 'sm'
+            ? 1.1
+            : $size === 'md'
+            ? 1.3
+            : $size === 'lg'
+            ? 1.5
+            : 1}
+      );
 
       > span {
         display: flex;
@@ -58,17 +73,17 @@ export const BasedInput = styled.input<CheckboxPropsT>`
         width: 1rem;
         height: 1rem;
         background: transparent;
-        border: 2px solid #9e9e9e;
+        border: 2px solid var(--black);
         border-radius: 2px;
         cursor: pointer;
-        transition: all 0.25s cubic-bezier(0.4, 0, 0.23, 1);
+        transition: all 0.25s var(--${b}-checked-anim);
       }
 
       &:hover {
         color: var(--white);
 
         > span {
-          background: rgba(255, 255, 255, 0.1);
+          background: rgba(var(--white), 0.1);
         }
       }
     }
@@ -80,7 +95,7 @@ export const BasedInput = styled.input<CheckboxPropsT>`
         color: var(--white);
 
         > span {
-          background: rgba(255, 255, 255, 0.1);
+          background: rgba(var(--white), 0.1);
         }
       }
     }
@@ -93,7 +108,7 @@ export const BasedInput = styled.input<CheckboxPropsT>`
           border: 0.5rem solid
             ${({backgroundColor, kind}) =>
               backgroundColor ? backgroundColor : `var(--${b}-${kind})`};
-          animation: ${shrinkBounce} 0.2s cubic-bezier(0.4, 0, 0.23, 1);
+          animation: ${shrinkBounce} 0.2s var(--${b}-checked-anim);
 
           &:before {
             content: '';
@@ -106,7 +121,7 @@ export const BasedInput = styled.input<CheckboxPropsT>`
             transform-origin: 0% 100%;
             animation: ${checkboxCheck('var(--white)')} 0.125s 0.25s
               // add checkColor here
-              cubic-bezier(0.4, 0, 0.23, 1) forwards;
+              var(--${b}-checked-anim) forwards;
           }
         }
       }

@@ -8,7 +8,12 @@
 export function generate(
   callback: (...args: any) => any
 ): Array<number | string> {
-  return Array.from({length: 26}, callback);
+  let generatedArr = Array.from({length: 26}, callback);
+  // limit length of arr
+  generatedArr = generatedArr.splice(0, 7);
+  // add dash
+  generatedArr.splice(generatedArr.length / 2, 0, '-');
+  return generatedArr;
 }
 
 /**

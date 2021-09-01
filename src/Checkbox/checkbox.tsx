@@ -55,8 +55,11 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxPropsT>(
 
     // if no id is received, set a random one
     useEffect(() => {
-      setCustomId(randomIdGenerator());
-    }, []);
+      console.log(id);
+      if (id === null) {
+        setCustomId(randomIdGenerator());
+      }
+    }, [id]);
 
     return (
       <Fragment>

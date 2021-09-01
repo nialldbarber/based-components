@@ -44,6 +44,7 @@ export default function App() {
           isChecked={checked}
           size="lg"
           onChange={() => setChecked(!checked)}
+          label="hello"
         />
         <Button text="press me" onClick={setUpChecked} />
       </Grid>

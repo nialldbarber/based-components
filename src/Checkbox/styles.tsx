@@ -46,11 +46,13 @@ export const BasedInput = styled.input<CheckboxStylesT>`
 
   + {
     label {
+      ${getBaseDefaults};
       position: relative;
       display: flex;
       margin: 0.6rem 0;
       align-items: center;
       color: var(--black);
+      cursor: pointer;
       transition: color 0.25s var(--${b}-checked-anim);
       transform: scale(
         ${({$size}) =>
@@ -69,7 +71,7 @@ export const BasedInput = styled.input<CheckboxStylesT>`
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-right: 1rem;
+        margin-right: 0.5rem;
         width: 1rem;
         height: 1rem;
         background: transparent;
@@ -77,26 +79,6 @@ export const BasedInput = styled.input<CheckboxStylesT>`
         border-radius: 2px;
         cursor: pointer;
         transition: all 0.25s var(--${b}-checked-anim);
-      }
-
-      &:hover {
-        color: var(--white);
-
-        > span {
-          background: rgba(var(--white), 0.1);
-        }
-      }
-    }
-  }
-
-  &:focus {
-    + {
-      label {
-        color: var(--white);
-
-        > span {
-          background: rgba(var(--white), 0.1);
-        }
       }
     }
   }
@@ -113,7 +95,7 @@ export const BasedInput = styled.input<CheckboxStylesT>`
           &:before {
             content: '';
             position: absolute;
-            top: 0.475rem;
+            top: ${({$size}) => ($size === 'lg' ? 0.475 : 0.375)}rem;
             left: 0.2rem;
             border-right: 3px solid transparent;
             border-bottom: 3px solid transparent;

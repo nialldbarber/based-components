@@ -50,7 +50,6 @@ const getActiveStyles = css`
 `;
 
 export const BasedButton = styled.button<ButtonStylesT>`
-  ${getBaseDefaults};
   position: relative;
   display: inline-flex;
   flex-direction: ${({isLoading}) => (isLoading ? 'row' : 'column')};

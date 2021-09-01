@@ -80,7 +80,8 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxPropsT>(
           {...rest}
         />
         <label htmlFor={id ? id : customId}>
-          <span>{label || ''}</span>
+          <span />
+          {label || ''}
         </label>
       </Fragment>
     );

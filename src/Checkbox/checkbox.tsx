@@ -6,7 +6,7 @@ import React, {
   ChangeEvent,
   Fragment,
 } from 'react';
-import {BasedInput} from './styles';
+import {BasedInput, BasedInputContainer} from './styles';
 import {randomIdGenerator} from '../utils/generateId';
 import {Kind} from '../Button/button';
 
@@ -61,7 +61,7 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxPropsT>(
     }, [id]);
 
     return (
-      <Fragment>
+      <BasedInputContainer>
         <BasedInput
           ref={ref}
           id={id || customId}
@@ -85,7 +85,7 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxPropsT>(
           <span />
           {label || null}
         </label>
-      </Fragment>
+      </BasedInputContainer>
     );
   }
 );

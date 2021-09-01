@@ -39,10 +39,15 @@ const checkboxCheck = (checkColor: string) => keyframes`
   }
 `;
 
+export const BasedInputContainer = styled.div`
+  position: relative;
+`;
+
 export const BasedInput = styled.input<CheckboxStylesT>`
   ${getBaseDefaults};
   height: 0;
   width: 0;
+  position: absolute;
 
   + {
     label {

@@ -64,7 +64,7 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxPropsT>(
       <Fragment>
         <BasedInput
           ref={ref}
-          id={id ? id : customId}
+          id={id || customId}
           type="checkbox"
           checked={isChecked}
           disabled={isDisabled}
@@ -81,9 +81,9 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxPropsT>(
           }}
           {...rest}
         />
-        <label htmlFor={id ? id : customId}>
+        <label htmlFor={id || customId}>
           <span />
-          {label || ''}
+          {label || null}
         </label>
       </Fragment>
     );

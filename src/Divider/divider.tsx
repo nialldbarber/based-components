@@ -1,12 +1,12 @@
 import React, {forwardRef, ReactElement, CSSProperties} from 'react';
 import {BasedDivider} from './styles';
 
-const DIRECTIONS = {
+export const DIRECTIONS = {
   horizontal: 'horizontal',
   vertical: 'vertical',
 };
 
-const ORIENTATION = {
+export const ORIENTATION = {
   left: 'left',
   right: 'right',
   center: 'center',
@@ -43,9 +43,7 @@ const Divider = forwardRef<HTMLButtonElement, DividerPropsT>(
         style={customStyles}
         role="separator"
         {...ref}
-      >
-        <h1>divider</h1>
-      </BasedDivider>
+      />
     );
   }
 );

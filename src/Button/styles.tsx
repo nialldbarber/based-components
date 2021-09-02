@@ -1,7 +1,6 @@
 import {ReactNode, CSSProperties} from 'react';
 import styled, {css} from 'styled-components';
 import {ButtonPropsT, Kind} from './button';
-import {getBaseDefaults} from '../system/base-mixins';
 import {b} from '../system/based-provider';
 import {KIND_COLOURS} from '../constants/colors';
 

@@ -16,6 +16,8 @@
     "declaration": true,
     "esModuleInterop": true,
     "noImplicitReturns": true,
+    "noUnusedParameters": true,
+    "noUnusedLocals": false,
     "noImplicitThis": true,
     "noImplicitAny": true,
     "allowJs": true,

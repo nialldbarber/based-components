@@ -15,9 +15,9 @@ export const Wrapper = styled.div<CircleT>`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: ${({size, loadingSize}) => `${loadingSize ? loadingSize : size}px`};
-  height: ${({size, loadingSize}) => `${loadingSize ? loadingSize : size}px`};
-  border: ${({size}) => `${size && size / 15}px`} solid
+  width: ${({size, loadingSize}) => `${loadingSize || size}px`};
+  height: ${({size, loadingSize}) => `${loadingSize || size}px`};
+  border: ${({size}) => `${size / 15}px`} solid
     ${({loadingColor, kind}) => `var(--${b}-${kind}-loader)` || loadingColor};
   border-radius: 50%;
   border-right-color: transparent;

@@ -45,5 +45,5 @@ export function randomIdGenerator(): string {
     .toString()
     .split('')
     .filter((char: string) => /\S/.test(char));
-  return arr.sort((a, b) => Math.random() * 2 - 1).join('');
+  return arr.sort(() => Math.random() * 2 - 1).join('');
 }

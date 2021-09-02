@@ -1,5 +1,5 @@
 import React from 'react';
-import {BasedProvider, Button, H, Checkbox, Grid} from 'based-components';
+import {BasedProvider, Button, H, Checkbox, Grid, Divider} from 'based-components';
 import {useState} from 'react';
 import './index.css';
 
@@ -48,6 +48,8 @@ export default function App() {
           id="test-id-yo"
         />
         <Button text="press me" onClick={setUpChecked} />
+      <Divider />
+      <Divider direction="vertical" />
       </Grid>
     </BasedProvider>
   );

@@ -55,9 +55,9 @@ const Header = forwardRef<HTMLHeadingElement, HeaderPropsT>(
         ref={ref}
         {...{theme, strong, isTruncated, iconPre, iconEnd}}
       >
-        {iconPre && iconPre}
+        {iconPre}
         {header}
-        {iconEnd && iconEnd}
+        {iconEnd}
       </BasedHeader>
     ) : (
       <BasedHeader {...{theme, strong, isTruncated}}>{header}</BasedHeader>

@@ -94,7 +94,7 @@ export const BasedInput = styled.input<CheckboxStylesT>`
         > span {
           border: 0.5rem solid
             ${({backgroundColor, kind}) =>
-              backgroundColor ? backgroundColor : `var(--${b}-${kind})`};
+              backgroundColor || `var(--${b}-${kind})`};
           animation: ${shrinkBounce} 0.2s var(--${b}-checked-anim);
 
           &:before {

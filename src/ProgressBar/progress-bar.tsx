@@ -20,7 +20,7 @@ function ProgressBar({
   const val = value && value >= 100 ? 100 : value;
 
   return (
-    <BasedProgressBar {...{...rest}} style={customStyles}>
+    <BasedProgressBar style={customStyles} {...rest}>
       <Progress
         {...{height, speed}}
         value={val}

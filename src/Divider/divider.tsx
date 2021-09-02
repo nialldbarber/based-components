@@ -1,10 +1,24 @@
 import React, {forwardRef, ReactElement, CSSProperties} from 'react';
 import {BasedDivider} from './styles';
 
+const DIRECTIONS = {
+  horizontal: 'horizontal',
+  vertical: 'vertical',
+};
+
+const ORIENTATION = {
+  left: 'left',
+  right: 'right',
+  center: 'center',
+};
+
+export type DirectionsT = keyof typeof DIRECTIONS;
+export type OrientationT = keyof typeof ORIENTATION;
+
 export type DividerPropsT = {
-  direction?: 'horizontal' | 'vertical';
+  direction?: DirectionsT;
   color?: string;
-  orientation?: 'left' | 'right' | 'center';
+  orientation?: OrientationT;
   className?: string;
   dashed?: boolean;
   customStyles?: CSSProperties;
@@ -28,6 +42,7 @@ const Divider = forwardRef<HTMLButtonElement, DividerPropsT>(
         {...{direction, orientation, className, color, dashed, ...rest}}
         style={customStyles}
         role="separator"
+        {...ref}
       >
         <h1>divider</h1>
       </BasedDivider>

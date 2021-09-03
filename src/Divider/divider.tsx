@@ -24,7 +24,7 @@ export type DividerPropsT = {
   customStyles?: CSSProperties;
 };
 
-const Divider = forwardRef<HTMLButtonElement, DividerPropsT>(
+const Divider = forwardRef<HTMLDivElement, DividerPropsT>(
   (
     {
       direction = 'horizontal',

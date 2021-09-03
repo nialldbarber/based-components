@@ -12,8 +12,20 @@ import React, {
 import {LoadingSpinner} from '../LoadingSpinner';
 import {BasedButton} from './styles';
 import {classNames} from '../utils/classNames';
-import {SHAPE, KIND} from './constants';
 import {white} from '../constants/colors';
+
+export const SHAPE: Record<string, string> = {
+  default: 'default',
+  pill: 'pill',
+};
+
+export const KIND: Record<string, string> = {
+  primary: 'primary',
+  secondary: 'secondary',
+  tertiary: 'tertiary',
+  ghost: 'ghost',
+  danger: 'danger',
+};
 
 export type Shape = keyof typeof SHAPE;
 export type Kind = keyof typeof KIND;

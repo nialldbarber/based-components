@@ -22,7 +22,13 @@ yarn add based-components
 
 ```tsx
 import React, {useState} from 'react';
-import {Form, Input, Button, useForm} from 'based-components';
+import {
+  BasedProvider,
+  Form,
+  Input,
+  Button,
+  useForm
+} from 'based-components';
 
 interface Values {
   text: string;
@@ -45,17 +51,19 @@ function App() {
   }
 
   return (
-    <Form onSubmit={handleSubmit(submitData)}>
-      {values.map(({type, text, password = false}) => (
-        <Input type={type || 'text'} text={text} />
-      ))}
-      <Button
-        text="Submit"
-        shape="pill"
-        isLoading={loading}
-        onClick={() => setActive(!active)}
-      />
-    </Form>
+    <BasedProvider>
+      <Form onSubmit={handleSubmit(submitData)}>
+        {values.map(({type, text, password = false}) => (
+          <Input type={type || 'text'} text={text} />
+        ))}
+        <Button
+          text="Submit"
+          shape="pill"
+          isLoading={loading}
+          onClick={() => setActive(!active)}
+        />
+      </Form>
+    </BasedProvider>
   );
 }
 ```

@@ -18,6 +18,7 @@ const ProgressBar = forwardRef<HTMLDivElement, ProgressBarPropsT>(
     return (
       <BasedProgressBar style={customStyles} {...rest}>
         <Progress
+          ref={ref}
           {...{height, speed}}
           value={val}
           style={customBarStyles}

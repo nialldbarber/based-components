@@ -10,10 +10,6 @@ export function isFunction(test: any): boolean {
 /**
  * Tests array is populated with `type` input
  *
- * Example:
- * isArrayType([1, 2, 3], 'number') // = true
- * isArrayType(['foo', 'bar', 'boz'], 'number') // = false
- *
  * @param test any[]
  * @param type string
  * @returns boolean

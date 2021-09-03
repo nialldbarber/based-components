@@ -24,10 +24,3 @@ export function classNames(...classes: unknown[]): string {
   }
   return classes.filter(Boolean).join(' ');
 }
-
-// test
-// an empty array should return an empty string
-// an array of letters/words should return a string
-// an array of numbers should return a string with those numbers
-// an array containing an object should be skipped
-// an array containing null/undefined should be skipped

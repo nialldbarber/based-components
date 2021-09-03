@@ -1,3 +1,5 @@
+import {addItemToMiddleOfArr, floorAndRoundNumber} from './helpers';
+
 // TODO: tests!
 
 /**
@@ -10,22 +12,29 @@ export function generate(
 ): Array<number | string> {
   let generatedArr = Array.from({length: 26}, callback);
   // limit length of arr
-  generatedArr = generatedArr.splice(0, 7);
-  // add dash
-  generatedArr.splice(generatedArr.length / 2, 0, '-');
-  return generatedArr;
+  return generatedArr.splice(0, 7);
+}
+
+/**
+ * Generate a random letter
+ * @param typeCase string
+ * @returns string
+ */
+export function generateLetter(typeCase: string): string {
+  let randomLetter = String.fromCharCode(
+    typeCase.charCodeAt(0) + floorAndRoundNumber()
+  );
+  return randomLetter;
 }
 
 /**
  * Generate a random number
  * @returns number
  */
-export function generateNumber(): number {
-  return Math.floor(Math.random() * 10);
-}
+export const generateNumber = (): number => floorAndRoundNumber();
 
 /**
- * Fuses generate & generateNumber to generate a random string to be used for keys/IDs
+ * Generates a random string to be used for keys/IDs
  * @returns string
  */
 export function randomIdGenerator(): string {
@@ -33,17 +42,17 @@ export function randomIdGenerator(): string {
 
   // generate random values
   let numbers = generate(() => generateNumber());
-  let lowerCaseLetters = generate((_: any, i: number) =>
-    String.fromCharCode('a'.charCodeAt(0) + i)
-  );
-  let upperCaseLetters = generate((_: any, i: number) =>
-    String.fromCharCode('A'.charCodeAt(0) + i)
-  );
-
+  let lowerCaseLetters = generate(() => generateLetter('a'));
+  let upperCaseLetters = generate(() => generateLetter('A'));
+  // format into an acceptable string
   arr
     .push(...numbers, ...lowerCaseLetters, ...upperCaseLetters)
     .toString()
     .split('')
-    .filter((char: string) => /\S/.test(char));
-  return arr.sort(() => Math.random() * 2 - 1).join('');
+    // remove any whitespace
+    .filter((char: string) => /\S/.test(char))
+    .sort(() => Math.random() * 2 - 1);
+  // add a dash in the middle
+  addItemToMiddleOfArr(arr, '-');
+  return arr.join('');
 }

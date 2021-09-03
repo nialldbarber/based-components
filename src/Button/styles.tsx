@@ -69,8 +69,8 @@ export const BasedButton = styled.button<ButtonStylesT>`
   transition: 0 125s ease;
   opacity: ${({disabled}) => (disabled ? 0.6 : 1)};
 
-  ${({kind}) => getKindStyles(kind as KindT)}
-  ${getActiveStyles}
+  ${({kind}) => getKindStyles(kind as KindT)};
+  ${getActiveStyles};
 
   &.default {
     border-radius: 6px;

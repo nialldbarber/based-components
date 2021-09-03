@@ -1,4 +1,4 @@
-import React, {ReactNode, ReactElement} from 'react';
+import React, {forwardRef, ReactNode, ReactElement} from 'react';
 
 export type CardPropsT = {
   header?: string;
@@ -6,17 +6,20 @@ export type CardPropsT = {
   children?: ReactNode;
 };
 
-function Card({header, avatar, children, ...rest}: CardPropsT): ReactElement {
-  return (
-    <div {...rest}>
-      {header && (
-        <div>
-          {header}
-          {avatar}
-        </div>
-      )}
-      <div>{children}</div>
-    </div>
-  );
-}
+const Card = forwardRef<HTMLDivElement, CardPropsT>(
+  ({header, avatar, children, ...rest}, ref): ReactElement => {
+    return (
+      <div {...rest} ref={ref}>
+        {header && (
+          <div>
+            {header}
+            {avatar}
+          </div>
+        )}
+        <div>{children}</div>
+      </div>
+    );
+  }
+);
+
 export default Card;

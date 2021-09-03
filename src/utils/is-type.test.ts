@@ -1,4 +1,4 @@
-import {isFunction, isArrayType} from './isType';
+import {isFunction, isArrayType} from './is-type';
 
 let arrNums = [1, 2, 3];
 let arrStr = ['one', 'two', 'three'];

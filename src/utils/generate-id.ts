@@ -1,6 +1,5 @@
-import {addItemToMiddleOfArr, floorAndRoundNumber} from './helpers';
-
-// TODO: tests!
+import {addItemToMiddleOfArr} from './arrays';
+import {floorAndRoundNumber} from './number-helpers';
 
 /**
  * Generate a random array based on a given callback

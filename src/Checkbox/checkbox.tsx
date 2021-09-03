@@ -7,7 +7,7 @@ import React, {
   Fragment,
 } from 'react';
 import {BasedInput, BasedInputContainer} from './styles';
-import {randomIdGenerator} from '../utils/generateId';
+import {randomIdGenerator} from '../utils/generate-id';
 import {Kind} from '../Button/button';
 
 const CHECKBOX_SIZES: Record<string, string> = {

@@ -2,10 +2,6 @@ import {isArrayType} from './isType';
 
 /**
  * Return list of class names as a string
- *
- * Example:
- * classNames('one', TWO, 3) // = 'one two 3'
- *
  * @param classes unknown[]
  * @returns string
  */

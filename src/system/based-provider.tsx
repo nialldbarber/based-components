@@ -21,6 +21,8 @@ export const GlobalStyles = createGlobalStyle`
 
     --${b}-white: var(--white);
     --${b}-white-hovered: #E5E5E5;
+    --${b}-white-dark: #C2C0C0;
+    --${b}-white-one: #8A8888;
 
     --${b}-focus-hovered: rgba(66, 153, 225, 0.6);
 

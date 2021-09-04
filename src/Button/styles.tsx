@@ -2,6 +2,7 @@ import {ReactNode, CSSProperties} from 'react';
 import styled, {css} from 'styled-components';
 import {ButtonPropsT, Kind} from './button';
 import {b} from '../system/based-provider';
+import {getBaseDefaults} from '../system/base-mixins';
 import {KIND_COLOURS} from '../constants/colors';
 
 export type KindT = keyof typeof KIND_COLOURS;
@@ -48,7 +49,8 @@ const getActiveStyles = css`
   }
 `;
 
-export const BasedButton = styled.button<ButtonStylesT>`
+export const getButtonStyles = css<ButtonStylesT>`
+  ${getBaseDefaults};
   position: relative;
   display: inline-flex;
   flex-direction: ${({isLoading}) => (isLoading ? 'row' : 'column')};
@@ -82,4 +84,8 @@ export const BasedButton = styled.button<ButtonStylesT>`
   p {
     margin: 0;
   }
+`;
+
+export const BasedButton = styled.button<ButtonStylesT>`
+  ${getButtonStyles};
 `;

@@ -6,6 +6,7 @@ import {H} from './header';
 import {Divider} from './divider';
 import {ProgressBar} from './ProgressBar';
 import {Grid, GridItem} from './Grid';
+import {FileUploader} from './FileUploader';
 // system
 import BasedProvider from './system/based-provider';
 
@@ -20,4 +21,5 @@ export {
   ProgressBar,
   Grid,
   GridItem,
+  FileUploader,
 };

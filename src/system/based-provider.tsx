@@ -1,7 +1,5 @@
 import React, {Fragment, ReactChild} from 'react';
 import {createGlobalStyle} from 'styled-components';
-// @ts-ignore
-import InterLight from './assets/fonts/Inter-Light.ttf';
 
 type Props = {
   children?: ReactChild;

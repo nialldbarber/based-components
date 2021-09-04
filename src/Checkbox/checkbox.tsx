@@ -4,7 +4,6 @@ import React, {
   forwardRef,
   ReactElement,
   ChangeEvent,
-  Fragment,
 } from 'react';
 import {BasedInput, BasedInputContainer} from './styles';
 import {randomIdGenerator} from '../utils/generate-id';
@@ -39,7 +38,7 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxPropsT>(
       className,
       color,
       label,
-      size = 'sm',
+      size = CHECKBOX_SIZES.sm,
       id = null,
       kind = 'primary',
       isChecked,

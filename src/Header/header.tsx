@@ -32,7 +32,7 @@ const Header = forwardRef<HTMLHeadingElement, HeaderPropsT>(
       level = 1,
       strong = false,
       line,
-      theme = 'dark',
+      theme = THEMES.dark,
       className,
       customStyles,
       isTruncated,

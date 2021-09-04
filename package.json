@@ -102,5 +102,13 @@
     "setupFilesAfterEnv": [
       "<rootDir>/jest-setup.ts"
     ]
-  }
+  },
+  "keywords": [
+    "react",
+    "javascript",
+    "components",
+    "styled-components",
+    "component-library",
+    "design-system"
+  ]
 }

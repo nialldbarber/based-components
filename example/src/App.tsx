@@ -1,5 +1,5 @@
 import React from 'react';
-import {BasedProvider, Grid, FileUploader} from 'based-components';
+import {BasedProvider, Grid, FileUploader, CloseButton} from 'based-components';
 import './index.css';
 
 export default function App() {
@@ -9,6 +9,7 @@ export default function App() {
     <BasedProvider>
       <Grid templateColumns="repeat(3, 1fr)">
         <FileUploader uploadCallback={dropCallback} />
+        <CloseButton />
       </Grid>
     </BasedProvider>
   );

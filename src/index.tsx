@@ -7,6 +7,7 @@ import {Divider} from './divider';
 import {ProgressBar} from './ProgressBar';
 import {Grid, GridItem} from './Grid';
 import {FileUploader} from './FileUploader';
+import {CloseButton} from './CloseButton';
 // system
 import BasedProvider from './system/based-provider';
 
@@ -22,4 +23,5 @@ export {
   Grid,
   GridItem,
   FileUploader,
+  CloseButton,
 };

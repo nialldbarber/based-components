@@ -23,6 +23,7 @@ export interface ButtonStylesT extends BackgroundT {
   'aria-label'?: any;
   rest?: any;
   ref?: any;
+  $active?: boolean;
 }
 
 const getKindStyles = (kind: string) => {

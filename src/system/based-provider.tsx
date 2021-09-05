@@ -17,12 +17,14 @@ export const GlobalStyles = createGlobalStyle`
     --red: #DC2626;
     --dark-red: #B91C1C;
 
+    // stateful colors
     --${b}-white: var(--white);
     --${b}-white-hovered: #E5E5E5;
     --${b}-white-dark: #C2C0C0;
     --${b}-white-one: #8A8888;
-
     --${b}-focus-hovered: rgba(66, 153, 225, 0.6);
+    --${b}-primary-hovered: rgb(16, 44, 96);
+    --${b}-primary-hovered-border: rgb(39, 110, 241);
 
     // primary
     --${b}-primary: var(--blue);

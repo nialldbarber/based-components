@@ -18,6 +18,7 @@ export const UploaderContainer = styled.div<BasedFileUploaderT>`
       $active ? `var(--${b}-white)` : `var(--${b}-white-one)`};
     font-size: 20px;
     font-weight: 700;
+    text-align: center;
     white-space: nowrap;
   }
 `;

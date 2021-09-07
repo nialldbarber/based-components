@@ -1,19 +1,23 @@
-import React, {ReactElement, CSSProperties} from 'react';
+import React, {forwardRef, ReactElement, CSSProperties} from 'react';
 import Button from '../Button/button';
 
 export type CloseButtonPropsT = {
+  dimensions?: string | number;
   className?: string;
   customStyles?: CSSProperties;
 };
 
-const CloseButton = React.forwardRef<HTMLDivElement, CloseButtonPropsT>(
-  ({className, customStyles, ...rest}, ref): ReactElement => {
+const CloseButton = forwardRef<HTMLDivElement, CloseButtonPropsT>(
+  (
+    {className, dimensions = '1rem', customStyles, ...rest},
+    ref
+  ): ReactElement => {
     return (
       <div ref={ref} {...{className}} {...rest} style={customStyles}>
         <Button>
           <svg
-            width="1rem"
-            height="1rem"
+            width={dimensions}
+            height={dimensions}
             fill="currentColor"
             stroke="currentColor"
             strokeWidth="0"

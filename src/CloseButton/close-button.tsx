@@ -3,13 +3,22 @@ import Button from '../Button/button';
 
 export type CloseButtonPropsT = {
   dimensions?: string | number;
+  color?: string;
+  strokeWidth?: number;
   className?: string;
   customStyles?: CSSProperties;
 };
 
 const CloseButton = forwardRef<HTMLDivElement, CloseButtonPropsT>(
   (
-    {className, dimensions = '1rem', customStyles, ...rest},
+    {
+      className,
+      dimensions = '1rem',
+      color = 'currentColor',
+      strokeWidth = 0,
+      customStyles,
+      ...rest
+    },
     ref
   ): ReactElement => {
     return (
@@ -18,9 +27,9 @@ const CloseButton = forwardRef<HTMLDivElement, CloseButtonPropsT>(
           <svg
             width={dimensions}
             height={dimensions}
-            fill="currentColor"
-            stroke="currentColor"
-            strokeWidth="0"
+            fill={color}
+            stroke={color}
+            strokeWidth={strokeWidth}
             viewBox="0 0 24 24"
           >
             <path

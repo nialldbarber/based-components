@@ -4,7 +4,7 @@
  * @returns boolean
  */
 export function isFunction(test: any): boolean {
-  return typeof test === 'function';
+  return typeof test === ('function' as string);
 }
 
 /**

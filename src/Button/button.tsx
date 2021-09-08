@@ -81,9 +81,17 @@ const Button = forwardRef<HTMLButtonElement, ButtonPropsT>(
         ref={ref}
         style={customStyles}
         className={classNames(className, shape)}
-        onClick={onClick}
         aria-label={isLoading ? 'Loading' : null}
-        {...{type, kind, isLoading, isActive, disabled, iconPre, iconEnd}}
+        {...{
+          type,
+          kind,
+          isLoading,
+          isActive,
+          disabled,
+          iconPre,
+          iconEnd,
+          onClick,
+        }}
         {...rest}
       >
         {isLoading ? (

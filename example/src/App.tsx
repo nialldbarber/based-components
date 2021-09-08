@@ -1,11 +1,13 @@
 import React from 'react';
-import {BasedProvider, Button} from 'based-components';
+import {BasedProvider, Input} from 'based-components';
 import './index.css';
 
 export default function App() {
   return (
     <BasedProvider>
-      <Button text="hello" />
+      <div className="hello">
+        <Input />
+      </div>
     </BasedProvider>
   );
 }

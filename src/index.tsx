@@ -8,6 +8,7 @@ import {ProgressBar} from './ProgressBar';
 import {Grid, GridItem} from './Grid';
 import {FileUploader} from './FileUploader';
 import {CloseButton} from './CloseButton';
+import {DragNDropList} from './DragNDropList';
 // system
 import BasedProvider from './system/based-provider';
 
@@ -24,4 +25,5 @@ export {
   GridItem,
   FileUploader,
   CloseButton,
+  DragNDropList,
 };

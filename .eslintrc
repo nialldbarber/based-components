@@ -1,30 +1,9 @@
 {
-  "parser": "@typescript-eslint/parser",
-  "extends": [
-    "standard-react",
-    "plugin:prettier/recommended",
-    "prettier/standard",
-    "prettier/react",
-    "plugin:@typescript-eslint/eslint-recommended"
-  ],
-  "env": {
-    "node": true
-  },
-  "parserOptions": {
-    "ecmaFeatures": {
-      "jsx": true
-    }
-  },
+  "extends": ["wesbos/typescript"],
   "settings": {
     "react": {
       "version": "17"
     }
   },
-  "rules": {
-    "react/prop-types": 0,
-    "react/jsx-fragments": 0
-  },
-  "plugins": [
-    "jsx-a11y"
-  ]
+  "plugins": ["jsx-a11y"]
 }

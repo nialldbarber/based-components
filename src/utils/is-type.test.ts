@@ -1,7 +1,7 @@
 import {isFunction, isArrayType} from './is-type';
 
-let arrNums = [1, 2, 3];
-let arrStr = ['one', 'two', 'three'];
+const arrNums = [1, 2, 3];
+const arrStr = ['one', 'two', 'three'];
 
 describe('isFunction', () => {
   test('a valid function should return true', () => {

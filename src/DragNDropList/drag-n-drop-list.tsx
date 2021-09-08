@@ -1,3 +1,4 @@
+import {classNames} from '../utils/classNames';
 import React, {
   useReducer,
   forwardRef,
@@ -6,7 +7,6 @@ import React, {
   DragEvent,
 } from 'react';
 import styled from 'styled-components';
-import {classNames} from '../utils/classNames';
 
 export interface DragNDropListPropsT {
   listItems?: string[] | number[];

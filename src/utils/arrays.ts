@@ -6,7 +6,7 @@
  */
 export function addItemToMiddleOfArr<T extends number | string>(
   arr: T[],
-  input: any
+  input: T
 ): T[] {
   arr.splice(Math.ceil(arr.length) / 2, 0, input);
   return arr;

@@ -9,9 +9,9 @@ import {floorAndRoundNumber} from './number-helpers';
 export function generate(
   callback: (...args: any) => any
 ): Array<number | string> {
-  let generatedArr = Array.from({length: 26}, callback);
+  const generatedArr = Array.from({length: 26}, callback);
   // limit length of arr
-  return generatedArr.splice(0, 7);
+  return generatedArr.splice(0, 7) as string[];
 }
 
 /**
@@ -20,7 +20,7 @@ export function generate(
  * @returns string
  */
 export function generateLetter(typeCase: string): string {
-  let randomLetter = String.fromCharCode(
+  const randomLetter = String.fromCharCode(
     typeCase.charCodeAt(0) + floorAndRoundNumber()
   );
   return randomLetter;
@@ -37,12 +37,12 @@ export const generateNumber = (): number => floorAndRoundNumber();
  * @returns string
  */
 export function randomIdGenerator(): string {
-  let arr: Array<number | string> = [];
+  const arr: Array<number | string> = [];
 
   // generate random values
-  let numbers = generate(() => generateNumber());
-  let lowerCaseLetters = generate(() => generateLetter('a'));
-  let upperCaseLetters = generate(() => generateLetter('A'));
+  const numbers = generate(() => generateNumber());
+  const lowerCaseLetters = generate(() => generateLetter('a'));
+  const upperCaseLetters = generate(() => generateLetter('A'));
   // format into an acceptable string
   arr
     .push(...numbers, ...lowerCaseLetters, ...upperCaseLetters)

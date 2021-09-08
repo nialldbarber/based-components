@@ -34,7 +34,8 @@ export const BasedHeader = styled.div<StyledHeaderT>`
   h5,
   h6 {
     font-family: 'Inter', sans-serif;
-    color: ${({theme}) => (theme === 'dark' ? 'var(--black)' : 'var(--white)')};
+    color: ${({theme}) =>
+      theme === 'dark' ? `var(--based-black)` : 'var(--based-white)'};
     ${({isTruncated}) => isTruncated && getTruncatedStyles};
     font-weight: ${({strong}) => (strong ? 'bold' : 'normal')};
   }

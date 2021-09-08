@@ -56,7 +56,7 @@ export const BasedInput = styled.input<CheckboxStylesT>`
       display: flex;
       margin: 0.6rem 0;
       align-items: center;
-      color: var(--black);
+      color: var(--${b}-black);
       cursor: pointer;
       transition: color 0.25s var(--${b}-checked-anim);
       transform: scale(
@@ -80,7 +80,7 @@ export const BasedInput = styled.input<CheckboxStylesT>`
         width: 1rem;
         height: 1rem;
         background: transparent;
-        border: 2px solid var(--black);
+        border: 2px solid var(--${b}-black);
         border-radius: 2px;
         cursor: pointer;
         transition: all 0.25s var(--${b}-checked-anim);
@@ -106,7 +106,7 @@ export const BasedInput = styled.input<CheckboxStylesT>`
             border-bottom: 3px solid transparent;
             transform: rotate(45deg);
             transform-origin: 0% 100%;
-            animation: ${checkboxCheck('var(--white)')} 0.125s 0.25s
+            animation: ${checkboxCheck(`var(--${b}-white)`)} 0.125s 0.25s
               // add checkColor here
               var(--${b}-checked-anim) forwards;
           }

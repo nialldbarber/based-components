@@ -4,29 +4,40 @@ import React, {
   CSSProperties,
   ChangeEvent,
 } from 'react';
+import {BasedInput} from './styles';
 
-interface InputPropsT {
+export interface InputPropsT {
   type?: string;
   value?: string | number;
+  error?: boolean;
+  disabled?: boolean;
   className?: string;
   customStyles?: CSSProperties;
   onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
-  // new
-  // error state
-  // password
 }
 
 const Input = forwardRef<HTMLInputElement, InputPropsT>(
   (
-    {type = 'text', value, className, customStyles, onChange, ...rest},
+    {
+      type = 'text',
+      value,
+      error = false,
+      disabled = false,
+      className,
+      customStyles,
+      onChange,
+      ...rest
+    },
     ref
   ): ReactElement => {
     return (
-      <input
+      <BasedInput
         ref={ref}
         value={value || ''}
         style={customStyles}
-        {...{type, className, onChange}}
+        $error={error}
+        {...{type, className, disabled}}
+        onChange={onChange}
         {...rest}
       />
     );

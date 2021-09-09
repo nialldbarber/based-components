@@ -16,6 +16,8 @@ export const GlobalStyles = createGlobalStyle`
     --${b}-dark-blue: #1D4ED8;
     --${b}-red: #DC2626;
     --${b}-dark-red: #B91C1C;
+    --${b}-grey: rgb(212, 212, 212);
+    --${b}-light-grey: rgb(247, 246, 245);
 
     // stateful colors
     --${b}-white-hovered: #E5E5E5;

@@ -1,5 +1,5 @@
 import React, {useState, ChangeEvent} from 'react';
-import {BasedProvider, Input} from 'based-components';
+import {BasedProvider, Grid, Input} from 'based-components';
 import './index.css';
 
 export default function App() {
@@ -7,7 +7,7 @@ export default function App() {
 
   return (
     <BasedProvider>
-      <div className="hello">
+      <Grid gap="10">
         <Input
           value={test}
           onChange={({target}: ChangeEvent<HTMLInputElement>) =>
@@ -35,7 +35,7 @@ export default function App() {
           }
           disabled
         />
-      </div>
+      </Grid>
     </BasedProvider>
   );
 }

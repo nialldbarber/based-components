@@ -20,7 +20,8 @@ export const BasedInput = styled.input<InputStylesT>`
   transition: background-color 0.125s ease,
     box-shadow 0.2s cubic-bezier(var(--${b}-anim));
 
-  &:hover {
+  &:hover,
+  &:focus {
     background-color: ${({disabled}) =>
       disabled ? `none` : `var(--${b}-light-grey)`};
   }

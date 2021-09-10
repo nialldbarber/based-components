@@ -4,7 +4,7 @@ import {BasedGrid, BasedGridItem} from './styles';
 export type GridPropsT = {
   area?: string;
   templateAreas?: string;
-  gap?: string | number;
+  gap?: string;
   rowGap?: string;
   columnGap?: string;
   column?: string;
@@ -69,10 +69,9 @@ export const Grid = forwardRef<HTMLDivElement, GridPropsT>(
     };
 
     return (
-      <BasedGrid
+      <div
         ref={ref}
         style={{
-          background: 'red',
           ...styles,
           ...customStyles,
         }}
@@ -80,7 +79,7 @@ export const Grid = forwardRef<HTMLDivElement, GridPropsT>(
         {...rest}
       >
         {children}
-      </BasedGrid>
+      </div>
     );
   }
 );

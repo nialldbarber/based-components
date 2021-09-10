@@ -69,7 +69,7 @@ export const Grid = forwardRef<HTMLDivElement, GridPropsT>(
     };
 
     return (
-      <div
+      <BasedGrid
         ref={ref}
         style={{
           ...styles,
@@ -79,7 +79,7 @@ export const Grid = forwardRef<HTMLDivElement, GridPropsT>(
         {...rest}
       >
         {children}
-      </div>
+      </BasedGrid>
     );
   }
 );

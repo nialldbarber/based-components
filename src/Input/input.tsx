@@ -36,8 +36,7 @@ const Input = forwardRef<HTMLInputElement, InputPropsT>(
         value={value || ''}
         style={customStyles}
         $error={error}
-        {...{type, className, disabled}}
-        onChange={onChange}
+        {...{type, className, disabled, onChange}}
         {...rest}
       />
     );

@@ -1,5 +1,5 @@
 import React, {useState, ChangeEvent} from 'react';
-import {BasedProvider, Grid, Input} from 'based-components';
+import {BasedProvider, Grid, Input, FileUploader} from 'based-components';
 import './index.css';
 
 export default function App() {
@@ -8,6 +8,7 @@ export default function App() {
   return (
     <BasedProvider>
       <Grid gap="10">
+        <FileUploader />
         <Input
           value={test}
           onChange={({target}: ChangeEvent<HTMLInputElement>) =>
